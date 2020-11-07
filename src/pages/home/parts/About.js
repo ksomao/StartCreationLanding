@@ -132,7 +132,7 @@ const Container = styled(motion.div)`
           padding: 24px;
         .about-description-title{
               margin-top: 60px;
-              font-size: ${props => props.theme.fontSize.mobile};
+              font-size: ${props => props.theme.fontSizeMobile};
               color: ${props => props.theme.orange};
               text-transform: uppercase;
             .about-description-title-bottom{
@@ -161,7 +161,7 @@ const Container = styled(motion.div)`
        padding-bottom: 0;
           .about-description{
               .about-description-title{
-                 font-size: ${props => props.theme.fontSize.lDesktop};
+                 font-size: ${props => props.theme.fontSizeLDesktop};
               }
                .about-description-excerpt{
                   max-width: none;
@@ -188,7 +188,7 @@ const Container = styled(motion.div)`
           }
           .about-description{
             .about-description-title{
-                font-size: ${props => props.theme.fontSize.sDesktop};
+                font-size: ${props => props.theme.fontSizeDesktop};
                  margin-top: 150px;
                 .about-description-title-bottom{
                 }
@@ -208,7 +208,7 @@ const Container = styled(motion.div)`
             .about-content{
                 .about-description{
                     .about-description-title{
-                        font-size: ${props => props.theme.fontSize.lDesktop};
+                        font-size: ${props => props.theme.fontSizeLDesktop};
                     }
                }
             }

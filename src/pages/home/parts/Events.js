@@ -42,7 +42,7 @@ const Container = styled.div`
       margin-bottom: 50px;
       padding-top: 50px;
         .events-title{
-           font-size: ${props => props.theme.fontSize.mobile};
+           font-size: ${props => props.theme.fontSizeMobile};
            font-weight: 800;
            color: ${props => props.theme.orange};
            text-transform: uppercase;

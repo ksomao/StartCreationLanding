@@ -39,7 +39,7 @@ margin: 0 auto;
       position:relative;
      .partner-title{
            margin-top: 100px;
-           font-size: ${props => props.theme.fontSize.mobile};
+           font-size: ${props => props.theme.fontSizeMobile};
            font-weight: 800;
            color: ${props => props.theme.orange};
            text-transform: uppercase;

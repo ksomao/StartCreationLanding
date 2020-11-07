@@ -88,7 +88,7 @@ const Container = styled.div`
       flex-direction: column;
       padding: 32px;
        .space-title{
-              font-size: ${props => props.theme.fontSize.mobile};
+              font-size: ${props => props.theme.fontSizeMobile};
               font-weight: 800;
               color: ${props => props.theme.orange};
               text-transform: uppercase;

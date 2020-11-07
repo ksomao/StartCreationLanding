@@ -17,13 +17,11 @@ const httpLink = new HttpLink({
 const theme = {
     orange: '#F78240',
     blue: '#010253',
-    fontSize :{
-        mobile: "3rem",
-        tablet: "4rem",
-        sDesktop: "5rem",
-        lDesktop: "6rem",
-        xlDesktop: "7rem",
-    }
+    fontSizeMobile: "3rem",
+    fontSizeTablet: "4rem",
+    fontSizeDesktop: "5rem",
+    fontSizeLDesktop: "6rem",
+    fontSizeXlDesktop: "7rem"
 };
 
 const apolloClient = new ApolloClient({
