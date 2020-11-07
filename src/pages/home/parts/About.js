@@ -155,7 +155,7 @@ const Container = styled(motion.div)`
       }
       }
       
-    @media (min-width: 768px) {
+    @media only screen and (min-width: 768px) {
         padding-bottom: 50px;
        .about-content{
        padding-bottom: 0;
@@ -170,7 +170,7 @@ const Container = styled(motion.div)`
       }
     }
     
-    @media (min-width: 992px) {
+    @media only screen and (min-width: 992px) {
       margin-top: 400px;
       .about-content{
          display: grid;
@@ -204,7 +204,7 @@ const Container = styled(motion.div)`
 
     }
     
-    @media (min-width: 1200px){
+    @media only screen and (min-width: 1200px){
             .about-content{
                 .about-description{
                     .about-description-title{

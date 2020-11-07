@@ -130,10 +130,8 @@ const Container = styled.div`
       }
     }
   }
-  
-    @media (min-width: 576px) {}
-    @media (min-width: 768px) {}
-    @media (min-width: 992px) {
+
+    @media only screen and (min-width: 992px) {
        display: grid;
        grid-template-columns: 1fr 1fr;
        max-width: 1000px;
@@ -178,7 +176,7 @@ const Container = styled.div`
     }
     
     
-    @media (min-width: 1200px){
+    @media only screen and (min-width: 1200px){
        max-width: 1400px;
        .hero-left{
           .hero-left-content{

@@ -71,8 +71,8 @@ margin: 0 auto;
       }
   }
  }
- @media (min-width: 576px) {}
- @media (min-width: 768px) {
+
+ @media only screen and (min-width: 768px) {
       .partner-title-wrapper{
          .partner-title{
               margin-left: 0;
@@ -82,6 +82,4 @@ margin: 0 auto;
         grid-template-columns: 1fr 1fr; 
     }
  }
- @media (min-width: 992px) {}    
- @media (min-width: 1200px){}
 `

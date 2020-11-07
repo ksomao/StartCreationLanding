@@ -139,7 +139,7 @@ const Container = styled.div`
       }
       }
     }    
-    @media (max-width: 768px) {
+    @media only screen and (max-width: 768px) {
         .space-content{
          .space-content-left{
               .space-description{
@@ -148,7 +148,7 @@ const Container = styled.div`
           }
           }
         }
-    @media (min-width: 768px) {
+    @media only screen and (min-width: 768px) {
         padding-bottom: 150px;
        .space-content{  
           display: grid;
@@ -167,8 +167,7 @@ const Container = styled.div`
         }    
       }
     }
-    @media (min-width: 992px) {}    
-    @media (min-width: 1200px){
+    @media only screen and (min-width: 1200px){
         .space-content{  
           display: grid;
           grid-template-columns: 1fr ;
