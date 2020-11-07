@@ -36,13 +36,6 @@ const stagger = {
 };
 
 const Header = (props) => {
-
-    // console.log(data);
-    // const hero = data.elements[0]
-    // const heroUrl = hero.illustrationImage.asset.url
-    // const testimonial = data.elements[1]
-
-    console.log(arrowIcon);
     return (
         <Container
             className={'hero'}>
