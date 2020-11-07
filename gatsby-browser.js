@@ -32,7 +32,7 @@ const apolloClient = new ApolloClient({
 
 
 const wrapPageElement = ({ element, props }) => (
-    <div {...props}>{element}</div>
+    <Layout {...props}>{element}</Layout>
 )
 
 const wrapRootElement = ({ element }) => (
