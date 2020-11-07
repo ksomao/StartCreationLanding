@@ -4,10 +4,7 @@ import Space from "./parts/Space";
 import Events from "./parts/Events";
 import About from "./parts/About";
 import Partners from "./parts/Partners";
-import {gql, useQuery} from '@apollo/client';
 import styled from "styled-components";
-import SEO from "../../components/seo.js"
-import _ from "lodash"
 
 
 const IndexPage = () => {

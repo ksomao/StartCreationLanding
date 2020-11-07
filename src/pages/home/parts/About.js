@@ -132,8 +132,7 @@ const Container = styled(motion.div)`
           padding: 24px;
         .about-description-title{
               margin-top: 60px;
-              font-size: ${props => props.theme.fontSize.mobile};;
-              font-weight: 800;
+              font-size: ${props => props.theme.fontSize.mobile};
               color: ${props => props.theme.orange};
               text-transform: uppercase;
             .about-description-title-bottom{
