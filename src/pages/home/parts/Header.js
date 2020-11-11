@@ -50,7 +50,7 @@ const Header = (props) => {
                             <Title
                                 stacked
                                 color={props.theme.orange}
-                                size={5}
+                                size={2.5}
                                 sizeMd={7}
                                 sizeLg={7}
                                 sizeXl={9}

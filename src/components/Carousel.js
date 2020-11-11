@@ -37,7 +37,7 @@ const Carousel = ({data}) => {
                         <Text
                             color={'white'}
                             font-weight={200}
-                            size={0.5}
+                            size={0.6}
                             opacity={'80%'}
                             lineHeight={'170%'}
                             className={'carousel-item-description'}>{item.desc}</Text>

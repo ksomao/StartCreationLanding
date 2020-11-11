@@ -12,7 +12,7 @@ function SpaceServiceItem(props) {
     return (
         <ServiceListItem className={"space-service-item"}>
             <Text
-                size={0.5}
+                size={0.6}
                 fontWeight={800}
                 color={props => props.theme.orange}
                 className={"space-service-item-plus"}>+</Text>
@@ -21,7 +21,7 @@ function SpaceServiceItem(props) {
                 font-weight={600}
                 color={props => props.theme.blue}
                 textTransform={'capitalize'}
-                size={0.5}
+                size={0.6}
                 fontWeight={600}
                 className={"space-service-item-text"}>{props.service}</Text>
         </ServiceListItem>
@@ -68,7 +68,7 @@ const Space = (props) => {
                 <Title className={'space-title'}>
                     <Text
                         color={props.theme.orange}
-                        size={3.5}
+                        size={2.5}
                         sizeLg={6}
                         mawLg={"50px"}
                         lineHeight={'110%'}
@@ -85,7 +85,7 @@ const Space = (props) => {
                             as={'p'}
                             color={props.theme.blue}
                             fontWeight={300}
-                            size={0.5}
+                            size={0.6}
                             className={'space-description'}>
                             Venez à la rencontre d’une <span
                             className={'bold'}>communauté d’entrepreneurs</span> permanents logés au sein d’un espace
@@ -119,6 +119,7 @@ export default withTheme(Space)
 
 //-------------------------------------------
 const Container = styled.div`
+  overflow-x: hidden;
   padding-top: 100px;
   position:relative;
   padding-bottom: 100px;

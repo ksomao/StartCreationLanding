@@ -46,7 +46,7 @@ const Events = (props) => {
                 <Title>
                     <Text
                         color={props.theme.orange}
-                        size={3.5}
+                        size={3}
                         sizeLg={6}
                         lineHeight={'110%'}
                         fontWeight={900}
@@ -125,7 +125,7 @@ const ButtonWrapper = styled.div`
 
 const SubContainer = styled.div`
     position:relative;
-    padding-top: 260px;
+    padding-top: 150px;
     background: ${props => props.theme.blue};
     padding-bottom: 100px;
     overflow: hidden;
@@ -133,6 +133,12 @@ const SubContainer = styled.div`
          overflow: hidden;
         width: 200px;
    }
+   
+  @media (min-width: ${breakPoints.md}){
+     padding-top: 260px;
+  }
+      
+
 `
 const ContentWrapper = styled.div`
       position:relative;

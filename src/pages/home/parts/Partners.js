@@ -13,7 +13,7 @@ const Partners = (props) => {
                 <Text
                     stacked
                     color={props.theme.orange}
-                    size={3.5}
+                    size={2.5}
                     sizeLg={5}
                     mawLg={"50px"}
                     lineHeight={'110%'}
@@ -33,7 +33,7 @@ const Partners = (props) => {
                         color={props.theme.blue}
                         fontWeight={300}
                         maxWidthSm={'550px'}
-                        size={0.5}
+                        size={0.6}
                         className={'partner-description-text'}>Toujours plus de ressources et de possibilités au niveau local et régional pour éclairer le parcours du
                     créateur. Si notre approche est généraliste nous avons développé depuis 10 ans des collaborations avec
                     certaines structures afin d’affiner une expertise sectorielle, agrandir notre communauté d’entrepreneurs
@@ -54,6 +54,7 @@ const Container = styled.div`
 max-width: 1400px;
 margin: 0 auto ;
 padding-bottom: 100px;
+overflow-x: hidden;
 
 .partner-content{
   display: grid;

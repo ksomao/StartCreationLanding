@@ -10,7 +10,7 @@ const ButtonSlider = ({value}) => {
     return (
         <StyledLink className={'cta'} to={""}>
             <Text
-                size={0.5}
+                size={0.6}
                 color={props => props.theme.orange}
                 className={'cta-text'}>{value}</Text>
             <img className={'cta-icon'} src={arrowIcon} alt=""/>
