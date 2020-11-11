@@ -46,7 +46,7 @@ const Events = (props) => {
                 <Title>
                     <Text
                         color={props.theme.orange}
-                        size={3}
+                        size={2.5}
                         sizeLg={6}
                         lineHeight={'110%'}
                         fontWeight={900}
