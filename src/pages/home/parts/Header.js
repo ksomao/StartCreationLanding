@@ -1,11 +1,16 @@
 import React from "react"
 import parse from "html-react-parser"
-import styled from "styled-components";
+import styled, {withTheme} from "styled-components";
 import {Link} from "gatsby"
 import arrowIcon from "../../../images/arrowIcon.svg"
 import heroImg from "../../../images/hero-img.png"
 import heroBg from "../../../images/header-bg.svg"
 import Button from "../../../components/Button";
+import Text, {
+    default as Title,
+    default as BodyText,
+} from "./Text";
+import {breakPoints} from "../../../app-config";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -39,180 +44,170 @@ const Header = (props) => {
     return (
         <Container
             className={'hero'}>
-            <img className={'hero-blob'} src={heroBg} alt="start creation decoration background"/>
-            <div className="hero-left">
-                <div className="hero-left-content">
-                    <div className="hero-left-content-title-wrapper">
-                        <h1 className={'hero-left-content-title'}>start <br/> création <br/> & co.</h1>
-                    </div>
-                    <p className={'hero-left-content-excerpt'}>Vous avez une idée de projet ou plusieurs ? <br/>
-                        Vous voulez donner du sens à votre parcours socio-professionnel ? <br/>
-                        Vous ne savez pas par où ni avec qui commencer ? <br/>
-                        Démarrez avec Start Création car nous stimulons vos talents !
-                    </p>
-                    <Button value={'À propos de Nous'}/>
-                </div>
-            </div>
-            <div className={'hero-right'}>
-                <figure className={'hero-right-figure'}>
-                    <img className={'hero-right-image'}
-                         src={heroImg}
-                         alt=""/>
-                </figure>
-                <div className={'hero-testimonial'}>
-                    <p className={'hero-testimonial-excerpt'}>« Là où les idées créatives et innovantes trouvent un
-                        accompagnement juste et humain »</p>
-                    <p className={'hero-testimonial-name'}>- Nadine Minampala</p>
-                </div>
-            </div>
+            <Blob className={'hero-blob'} src={heroBg} alt="start creation decoration background"/>
+            <Wrapper>
+                <HeroLeft className="hero-left">
+                    <HeroLeftContent className="hero-left-content">
+                        <div className="hero-left-content-title-wrapper">
+                            <Title
+                                stacked
+                                color={props.theme.orange}
+                                size={5}
+                                sizeMd={7}
+                                sizeLg={7}
+                                sizeXl={9}
+                                fontWeight={800}
+                                lineHeight={'1'}
+                                className={'hero-left-content-title'}>
+                                <span>Start</span>
+                                <span>Création</span>
+                                <span>& Co.</span>
+                            </Title>
+                        </div>
+                        <Text
+                            as={'span'}
+                            color={props.theme.blue}
+                            maxWidthLg={'495px'}
+                            lineHeight={'130%'}
+                            fontWeight={300}
+                            marginTop={16}
+                            marginBottom={24}
+                            size={0.7}
+                            sizeLg={0.4}
+                            sizeXl={0.6}
+                            className={'hero-left-content-excerpt'}>Vous avez une idée de projet ou plusieurs ?<br/>
+                            Vous voulez donner du sens à votre parcours <br/>socio-professionnel ? <br/>
+                            Vous ne savez pas par où ni avec qui commencer ? <br/>
+                            Démarrez avec Start Création car nous stimulons vos talents !
+                        </Text>
+                        <Button value={'À propos de Nous'}/>
+                    </HeroLeftContent>
+                </HeroLeft>
+                <HeroRight>
+                    <HeroFigure className={'hero-right-figure'}>
+                        <HeroImage
+                            className={'hero-right-image'}
+                            src={heroImg}
+                            alt=""/>
+                    </HeroFigure>
+                    <Testimonial className={'hero-testimonial'}>
+                        <Text
+                            color={'white'}
+                            fontWeight={'800'}
+                            fontStyle={'italic'}
+                            lineHeight={1.5}
+                            size={0.5}
+                            marginBottom={10}
+                            className={'hero-testimonial-excerpt'}>« Là où les idées créatives et innovantes trouvent un
+                            accompagnement juste et humain »</Text>
+                        <Text
+                            color={'#00BCD6'}
+                            size={0.7}
+                            className={'hero-testimonial-name'}>- Nadine Minampala</Text>
+                    </Testimonial>
+                </HeroRight>
+            </Wrapper>
         </Container>
     )
 }
 
 const Container = styled.div`
-  width: 100%;
-  max-width: 1600px;
-  font-weight: 300;
-  color : ${props => props.theme.blue};
-   .hero-blob{
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    width: 25%;
-  }
-  .hero-left{
-     margin: 20px;
-     position:relative;
-    .hero-left-content{
-      .hero-left-content-title{
-        font-weight: 800;
-        font-size: 5em;
-        line-height: 95.7%;
-        text-transform: capitalize;
-        color: ${props => props.theme.orange};
-      }
-      .hero-left-content-excerpt{
-        line-height: 140%;
-        font-size: 1em;
-        margin-top: 30px;
-        margin-bottom: 24px;
-      }
-    }
-  }
-  .hero-right{
-      position:relative;
-    .hero-right-figure{
-      width: 100%;
-      overflow: hidden;
-      padding: 20px;
-      .hero-right-image{
-        width: 100% ;
-      }
-    }
-    .hero-testimonial{
-        position:absolute;
-        background: ${props => props.theme.blue};
-        font-size: 1em;
-        line-height: 150%;
-        padding: 20px;
-        bottom: 0;
-        right: 0;
-        width: 300px;
-        opacity: 0.98;
-      .hero-testimonial-excerpt{
-        font-weight: bold;
-        color: white;
-        font-style: italic;
-      }
-      .hero-testimonial-name{
-         color: #00BCD6;
-      }
-    }
-  }
-
-    @media only screen and (min-width: 992px) {
-       display: grid;
-       grid-template-columns: 1fr 1fr;
-       max-width: 1000px;
-       margin: 150px auto 0;
-       .hero-left{
-          .hero-left-content{
-              position:absolute;
-              z-index: 20;
-              .hero-left-content-title{
-                 font-size: 5em;                     
-              }
-             .hero-left-content-excerpt{
-                  font-size: 0.8em;
-                  width: 380px;
-                  margin-left: 5px;
-             }
-          }
-       }
-        
-    .hero-right{
-        width: 100%;
-        margin-left: -50px;
-    .hero-right-figure{
-      width: 110%;
-      margin-left: -60px;
-      .hero-right-image{
-        width: 100%;
-      }
-    }
-        .hero-testimonial{
-          width: 300px;
-          right: -20px;
-          bottom: -50px;
-          .hero-testimonial-excerpt{
-             font-size: 0.8em;
-          }
-          .hero-testimonial-name{
-            font-size: 0.8em;
-          }
-        }
-      }
-    }
-    
-    
-    @media only screen and (min-width: 1200px){
-       max-width: 1400px;
-       .hero-left{
-          .hero-left-content{
-              .hero-left-content-title{
-                 font-size: 7em;                     
-              }
-             .hero-left-content-excerpt{
-                  font-size: 1em;
-                  width: 492px;
-                  margin-left: 20px;
-             }
-          }
-       }
-        
-    .hero-right{
-        width: 105%;
-        margin-left: -70px;
-    .hero-right-figure{
-      .hero-right-image{
-        width: 100%;
-      }
-    }
-        .hero-testimonial{
-          width: 400px;
-          right: -20px;
-          bottom: -50px;
-          .hero-testimonial-excerpt{
-             font-size: 1em;
-          }
-          .hero-testimonial-name{
-            margin-top: 20px;
-            font-size: 1em;
-          }
-        }
-      }
-    }
+    margin-top: 100px;
+   //  @media  (min-width:  ${breakPoints.sm}) {
+   //    background: green;
+   //  }
+   // 
+   //      @media  (min-width:  ${breakPoints.md}) {
+   //      background: blueviolet;
+   //  }
+   //
+   //  @media  (min-width:  ${breakPoints.lg}) {
+   //  background: orangered;
+   // }
+`
+const Blob = styled.img`
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 25%;
 `
 
-export default Header
+const Wrapper = styled.div`
+  position:relative;
+  padding: 20px;
+  @media  (min-width:  ${breakPoints.lg}){
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 1600px;
+    padding: 0 100px;
+  }
+`
+
+const HeroLeft = styled.div`
+  position:relative;
+  @media  (min-width:  ${breakPoints.md}){
+      width: 100%;
+  }
+`
+
+const HeroLeftContent = styled.div`
+@media (min-width:${breakPoints.lg}){
+  position:absolute;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+`
+
+const HeroRight = styled.div`
+  position:relative;
+  margin-top: 32px;
+  @media (min-width:  ${breakPoints.lg}) {
+      width: 120%;
+      min-width: 500px;
+  }  
+  @media (min-width:  ${breakPoints.xl}) {
+
+  }
+`
+const HeroFigure = styled.figure`
+  overflow: hidden;
+  max-width: 780px;
+  position:relative;
+  @media (min-width:  ${breakPoints.md}) {
+      width: 110%;
+
+  }
+  
+   @media (min-width:  ${breakPoints.lg}) {
+       margin-top: 80px;
+  }
+`
+const HeroImage = styled.img`
+ width: 100% ;
+`
+const Testimonial = styled.div`
+  position:absolute;
+  background: ${props => props.theme.blue};
+  width: 250px;
+  padding: 20px;
+  opacity: 0.98;
+   @media (max-width:${breakPoints.lg}){
+      bottom: -20px;
+      left: 0px;
+  }
+
+    @media (min-width:${breakPoints.lg}){
+      padding: 20px;
+      bottom: -50px;
+      right: -100px;
+      width: 300px;
+  }
+`
+
+
+
+
+export default withTheme(Header)

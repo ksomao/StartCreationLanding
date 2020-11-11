@@ -2,13 +2,17 @@ import {Link} from "gatsby";
 import arrowIcon from "../images/cirlcleWhite.svg";
 import React from "react";
 import styled from "styled-components";
+import Text from "../pages/home/parts/Text";
 
 
 const ButtonSlider = ({value}) => {
 
     return (
         <StyledLink className={'cta'} to={""}>
-            <span className={'cta-text'}>{value}</span>
+            <Text
+                size={0.5}
+                color={props => props.theme.orange}
+                className={'cta-text'}>{value}</Text>
             <img className={'cta-icon'} src={arrowIcon} alt=""/>
         </StyledLink>
     )
@@ -26,10 +30,7 @@ const StyledLink = styled(Link)`
            height: 20px;
            margin-left: 16px;
         }
-        .cta-text{
-            font-size: 1em;
-            color: ${props => props.theme.orange};
-        }
+
         &:visited{
             text-transform: none;
         }

@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   font-family: Poppins, serif;
-  font-size: calc(0.75em + 1vmin);
+  font-size: 50px;
 }
 ol, ul {
   list-style: none;

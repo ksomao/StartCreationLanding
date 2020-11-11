@@ -6,10 +6,10 @@ import React from "react";
 import styled from "styled-components";
 
 
-const Button = ({value, v2}) => {
+const Button = ({value, v2, ...props}) => {
 
     return (
-        <StyledLink className={'cta'} to={""} v2={!!v2}>
+        <StyledLink className={'cta'} to={""} v2={v2}>
             {v2 && <img className={'cta-icon'} src={arrowIconWhite} alt=""/>}
             {!v2 && <img className={'cta-icon'} src={arrowIcon} alt=""/>}
             <span className={'cta-text'}>{value}</span>

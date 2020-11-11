@@ -1,19 +1,98 @@
 import React, {useEffect, useState} from "react"
-import styled from "styled-components";
-import Carousel from "../../../components/Carousel";
-import Button from "../../../components/Button";
+import styled, {withTheme} from "styled-components";
+import Text, {
+    default as LinkText,
+    default as Title,
+    default as BodyText,
+} from "./Text";
+import {Link} from "gatsby";
+import _ from "lodash"
+import {breakPoints, Links} from "../../../app-config";
 
-const Footer = () => {
+
+const Footer = (props) => {
+
     return (
         <Container className={'footer'}>
-
+            <FooterWrapper>
+                <BoxTextContentFooter>
+                    <Title
+                        color={props.theme.orange}
+                    >
+                        Start creation & co
+                    </Title>
+                    <BodyText
+                        color={'white'}
+                        size={0.7}
+                        sizeMd={0.4}
+                        maxWidthMd={'300px'}
+                    >
+                        We offer comfortable spaces, cozy cafe, high-speed internet, spacious parking area and many more
+                        for
+                        your best workspaces and meetings
+                    </BodyText>
+                </BoxTextContentFooter>
+                <Nav>
+                    {_.map(props.links, link => (
+                        <StyledLink key={link.name} to={link.to}>
+                            <LinkText
+                                size={0.7}
+                                sizeMd={0.4}
+                                color={'white'}
+                            >
+                                {link.name}
+                            </LinkText>
+                        </StyledLink>
+                    ))}
+                </Nav>
+            </FooterWrapper>
         </Container>
     )
 }
 
-export default Footer
+export default withTheme(Footer)
 
 const Container = styled.div`
     background: ${props => props.theme.blue};
-    padding-bottom: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+`
+const FooterWrapper = styled.div`
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   @media (min-width: ${breakPoints.md}){
+      flex-direction: row;
+      margin: 0 auto;
+      min-width: 1000px;
+   }
+`
+
+const BoxTextContentFooter = styled.div`
+   display: flex;
+   flex-direction: column;
+`
+
+const Nav = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-self: self-end;
+  @media (min-width: ${breakPoints.md}){
+      margin-top: 38px;
+      flex-direction: row;
+      min-width: 500px;
+  }
+`
+
+const StyledLink = styled(Link)`
+  margin-bottom: 16px;
+  text-decoration: none;
+  &:visited{
+    text-decoration: none;
+  }
+  @media (min-width: ${breakPoints.md}){
+     margin-left: 24px;
+  }
 `
