@@ -52,7 +52,7 @@ const Header = (props) => {
                         <div className="hero-left-content-title-wrapper">
                             <Title
                                 stacked
-                                color={"#F78240"}
+                                color={props.theme.orange}
                                 size={5}
                                 sizeMd={7}
                                 sizeLg={7}
