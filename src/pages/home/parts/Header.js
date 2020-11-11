@@ -1,8 +1,5 @@
 import React from "react"
-import parse from "html-react-parser"
 import styled, {withTheme} from "styled-components";
-import {Link} from "gatsby"
-import arrowIcon from "../../../images/arrowIcon.svg"
 import heroImg from "../../../images/hero-img.png"
 import heroBg from "../../../images/header-bg.svg"
 import Button from "../../../components/Button";

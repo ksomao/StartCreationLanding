@@ -99,7 +99,8 @@ const Title = styled(motion.h2)`
    margin-left: 60px;
    z-index: 4;
   .events-title-item{
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin-left: 20px;
   }
   @media (min-width: ${breakPoints.md}){

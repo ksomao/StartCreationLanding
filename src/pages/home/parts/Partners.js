@@ -14,7 +14,7 @@ const Partners = (props) => {
                     stacked
                     color={props.theme.orange}
                     size={3.5}
-                    sizeLg={6}
+                    sizeLg={5}
                     mawLg={"50px"}
                     lineHeight={'110%'}
                     fontWeight={900}
@@ -98,12 +98,11 @@ const PartnerLogos = styled.img`
 
 
 const Title = styled(motion.h2)`
-   position:relative;
    margin-top: -30px;
-   margin-left: 60px;
-   z-index: 4;
+   margin-left: 20px;
   @media (min-width: ${breakPoints.lg}){
     transform: translateY(80px);
+       margin-left: 60px;
     .partner-title-item{  
       &:nth-child(1){
         margin-left: 0;
