@@ -41,6 +41,7 @@ const stagger = {
 };
 
 const Header = (props) => {
+
     return (
         <Container
             className={'hero'}>
