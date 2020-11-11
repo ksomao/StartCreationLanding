@@ -1,5 +1,5 @@
 import React from "react"
-import styled, {css} from "styled-components";
+import styled, {css, withTheme} from "styled-components";
 import {breakPoints} from "../../../app-config";
 import {mixinFontScalableSize} from "../../../helper";
 
@@ -11,7 +11,7 @@ const Text = (props) => {
     )
 }
 
-export default Text
+export default withTheme(Text)
 
 const TextContainer = styled.span`
 font-size: calc(${props => props.size + "rem"} + 1vmin);
