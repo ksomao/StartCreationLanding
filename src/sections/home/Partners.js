@@ -1,10 +1,10 @@
-import React, {useState} from "react"
+import React from "react"
 import styled, {withTheme} from "styled-components";
-import partnerLogos from "../../../images/partner-image.png";
-import Button from "../../../components/Button";
-import Text from "./Text";
+import partnerLogos from "../../images/partner-image.png";
+import Button from "../../components/Button";
+import Text from "../../components/Text";
 import {motion} from "framer-motion";
-import {breakPoints} from "../../../app-config";
+import {breakPoints} from "../../app-config";
 
 const Partners = (props) => {
     return (
@@ -34,9 +34,9 @@ const Partners = (props) => {
                         fontWeight={300}
                         maxWidthSm={'550px'}
                         size={0.6}
-                        className={'partner-description-text'}>Toujours plus de ressources et de possibilités au niveau local et régional pour éclairer le parcours du
-                    créateur. Si notre approche est généraliste nous avons développé depuis 10 ans des collaborations avec
-                    certaines structures afin d’affiner une expertise sectorielle, agrandir notre communauté d’entrepreneurs
+                        className={'partner-description-text'}><Bold>Toujours plus de ressources</Bold> et de possibilités au niveau local et régional pour éclairer  <Bold>le parcours du
+                        créateur.</Bold> Si notre approche est généraliste nous avons développé depuis 10 ans des collaborations avec
+                    certaines structures afin d’affiner une <Bold>expertise sectorielle,</Bold> agrandir notre communauté d’entrepreneurs
                     et de ressources que nous mettons désormais au service de chaque porteur de fond.</Text>
                     <Button className={'cta-partner'} value={'Voir tous nos partenaires'}/>
                 </div>
@@ -55,7 +55,6 @@ max-width: 1400px;
 margin: 0 auto ;
 padding-bottom: 100px;
 overflow-x: hidden;
-
 .partner-content{
   display: grid;
   grid-template-columns: 1fr; 
@@ -97,6 +96,9 @@ const PartnerLogos = styled.img`
  width: 100%;
 `
 
+const Bold = styled.span`
+  font-weight: 600;
+`
 
 const Title = styled(motion.h2)`
    margin-top: -30px;

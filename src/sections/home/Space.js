@@ -1,11 +1,10 @@
-import React, {useEffect} from "react"
+import React from "react"
 import styled, {withTheme} from "styled-components";
-import Button from "../../../components/Button";
-import * as PropTypes from "prop-types";
-import Text from "./Text";
+import Button from "../../components/Button";
+import Text from "../../components/Text";
 import {motion} from "framer-motion";
-import {breakPoints} from "../../../app-config";
-import aboutBg from "../../../images/spaces-decoration.png";
+import {breakPoints} from "../../app-config";
+import aboutBg from "../../images/spaces-decoration.png";
 
 
 function SpaceServiceItem(props) {

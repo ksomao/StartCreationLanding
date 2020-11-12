@@ -2,7 +2,7 @@ import {Link} from "gatsby";
 import arrowIcon from "../images/cirlcleWhite.svg";
 import React from "react";
 import styled from "styled-components";
-import Text from "../pages/home/parts/Text";
+import Text from "./Text";
 
 
 const ButtonSlider = ({value}) => {

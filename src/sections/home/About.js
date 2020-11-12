@@ -1,12 +1,12 @@
 import React, {useEffect} from "react"
 import {motion, useAnimation} from 'framer-motion';
 import styled, {withTheme} from "styled-components";
-import aboutImage from "../../../images/about-img.png"
-import aboutBg from "../../../images/about-decorationabout-bg.svg"
-import Button from "../../../components/Button";
 import {useInView} from "react-intersection-observer";
-import Text from "./Text";
-import {breakPoints} from "../../../app-config";
+import aboutImage from "../../images/about-img.webp"
+import aboutBg from "../../images/about-decorationabout-bg.svg"
+import Button from "../../components/Button";
+import Text from "../../components/Text";
+import {breakPoints} from "../../app-config";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 

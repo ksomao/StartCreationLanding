@@ -1,13 +1,13 @@
 import React from "react"
 import styled, {withTheme} from "styled-components";
-import heroImg from "../../../images/hero-img.png"
-import heroBg from "../../../images/header-bg.svg"
-import Button from "../../../components/Button";
+import heroImg from "../../images/hero-xl.webp"
+import heroImgMin from "../../images/hero-lg.webp"
+import heroBg from "../../images/header-bg.svg"
+import Button from "../../components/Button";
 import Text, {
     default as Title,
-    default as BodyText,
-} from "./Text";
-import {breakPoints} from "../../../app-config";
+} from "../../components/Text";
+import {breakPoints} from "../../app-config";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -50,7 +50,7 @@ const Header = (props) => {
                             <Title
                                 stacked
                                 color={props.theme.orange}
-                                size={2.5}
+                                size={2.6}
                                 sizeMd={7}
                                 sizeLg={7}
                                 sizeXl={9}
@@ -65,17 +65,17 @@ const Header = (props) => {
                         <Text
                             as={'span'}
                             color={props.theme.blue}
-                            maxWidthLg={'495px'}
-                            lineHeight={'130%'}
-                            fontWeight={300}
+                            maxWidthLg={'430px'}
+                            lineHeight={'170%'}
+                            fontWeight={400}
                             marginTop={16}
-                            marginBottom={24}
+                            marginBottom={32}
                             size={0.7}
                             sizeLg={0.4}
                             sizeXl={0.6}
-                            className={'hero-left-content-excerpt'}>Vous avez une idée de projet ou plusieurs ?<br/>
-                            Vous voulez donner du sens à votre parcours <br/>socio-professionnel ? <br/>
-                            Vous ne savez pas par où ni avec qui commencer ? <br/>
+                            className={'hero-left-content-excerpt'}>Vous avez une idée de projet ou plusieurs ?
+                            Vous voulez donner du sens à votre parcours socio-professionnel ?
+                            Vous ne savez pas par où ni avec qui commencer ?
                             Démarrez avec Start Création car nous stimulons vos talents !
                         </Text>
                         <Button value={'À propos de Nous'}/>
@@ -86,6 +86,7 @@ const Header = (props) => {
                         <HeroImage
                             className={'hero-right-image'}
                             src={heroImg}
+                            srcset={heroImgMin + " 415w" }
                             alt=""/>
                     </HeroFigure>
                     <Testimonial className={'hero-testimonial'}>
@@ -128,7 +129,7 @@ const Blob = styled.img`
   z-index: -1;
   top: 0;
   right: 0;
-  width: 25%;
+  width: 40%;
 `
 
 const Wrapper = styled.div`

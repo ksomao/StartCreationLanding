@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react"
+import React, { useState} from "react"
 import styled, {withTheme} from "styled-components";
-import Carousel from "../../../components/Carousel";
-import Button from "../../../components/Button";
-import Text from "./Text";
+import Carousel from "../../components/Carousel";
+import Button from "../../components/Button";
+import Text from "../../components/Text";
+import {breakPoints} from "../../app-config";
+import aboutBg from "../../images/events-decoration.png";
 import {motion} from "framer-motion";
-import {breakPoints} from "../../../app-config";
-import aboutBg from "../../../images/events-decoration.png";
 
 const Events = (props) => {
     const [data, setData] = useState([

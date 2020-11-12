@@ -2,8 +2,7 @@ import React from "react"
 import styled from "styled-components";
 import ReactCarousel from 'react-elastic-carousel'
 import ButtonV2 from "./ButtonV2";
-import rBUtton from "../images/RightButtonSlider.png"
-import Text from "../pages/home/parts/Text";
+import Text from "./Text";
 
 const Carousel = ({data}) => {
     let $thisCarousel = React.createRef();

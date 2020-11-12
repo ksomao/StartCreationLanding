@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from "react"
+import React from "react"
 import styled, {withTheme} from "styled-components";
 import Text, {
     default as LinkText,
     default as Title,
     default as BodyText,
-} from "./Text";
+} from "../../components/Text";
 import {Link} from "gatsby";
 import _ from "lodash"
-import {breakPoints, Links} from "../../../app-config";
+import {breakPoints, Links} from "../../app-config";
 
 
 const Footer = (props) => {

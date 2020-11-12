@@ -1,7 +1,7 @@
 import React from "react"
 import styled, {css, withTheme} from "styled-components";
-import {breakPoints} from "../../../app-config";
-import {mixinFontScalableSize} from "../../../helper";
+import {breakPoints} from "../app-config";
+import {mixinFontScalableSize} from "../helpers";
 
 const Text = (props) => {
     return (
