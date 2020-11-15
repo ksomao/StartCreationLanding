@@ -9,6 +9,7 @@ import {useInView} from "react-intersection-observer";
 import {containerAnim, fadeInUp} from "../../animation";
 import _ from "lodash"
 import Text from "../../components/Text";
+import {breakPoints} from "../../app-config";
 
 
 const Grid = (props) => {
@@ -34,16 +35,27 @@ const Grid = (props) => {
             initial='initial'
             variants={containerAnim}
         >
-            {_.map(partners, partner => (
-                <PartnerItem>
-                    <WrapperImage>
-                        <Image size={partner.size} src={require("../..//images/logos/" + partner.image + ".png")} alt=""/>
-                    </WrapperImage>
-                    <Text
-                        size={0.4}
-                    >{partner.text}</Text>
-                </PartnerItem>
-            ))}
+            <Wrapper>
+                {_.map(partners, partner => (
+                    <PartnerItem variants={fadeInUp}>
+                        <WrapperImage>
+                            <Image size={partner.size} src={require("../..//images/logos/" + partner.image + ".png")}
+                                   alt=""/>
+                        </WrapperImage>
+                        <Text
+                            marginTop={16}
+                            fontWeight={300}
+                            size={0.4}
+                            color={props.theme.blue}
+                        >{partner.text}</Text>
+
+                        <LinkWrapper>
+                            <BgLink/>
+                            <Link className={'partner-link'} href="">visiter le site</Link>
+                        </LinkWrapper>
+                    </PartnerItem>
+                ))}
+            </Wrapper>
         </Container>
     )
 }
@@ -51,21 +63,61 @@ const Grid = (props) => {
 export default withTheme(Grid)
 
 const Container = styled(motion.div)`
+
+`
+
+const Wrapper = styled(motion.div)`
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    @media (min-width: ${breakPoints.md}){
+        margin: 0 auto;
+        max-width: 1000px;
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: ${breakPoints.lg}){
+        max-width: 1200px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 `
 
 const PartnerItem = styled(motion.div)`
-    max-width: 250px;
+    max-width: 320px;
 `
 const WrapperImage = styled(motion.div)`
-  height: 200px;
+  height: 100px;
   width: 200px;
   display: grid;
   overflow: hidden;
 `
 const Image = styled(motion.img)`
-  width: ${props => props.size ? props.size : '50%' };
+  width: ${props => props.size ? props.size : '50%'};
   align-self: flex-end;
+`
+
+const LinkWrapper = styled(motion.div)`
+   position: relative;
+   height: 30px;
+   padding-top: 8px;
+   margin-top: 16px;
+`
+
+const Link = styled(motion.a)`
+   color: ${props => props.theme.orange};
+   font-weight: 600;
+   margin-left: 12px;
+   margin-top: 20px;
+   &:visited{
+       color: ${props => props.theme.orange};
+   }
+`
+
+const BgLink = styled(motion.div)`
+   position:absolute;
+   height: 28px;
+   width: 28px;
+   border-radius: 100px;
+   top: 2px;
+   background: #FDD9C6;
+   z-index: -1;
 `
