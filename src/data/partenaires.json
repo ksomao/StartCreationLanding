@@ -8,6 +8,7 @@
   "maisondelemploi": {
     "text": "Vous êtes chercheur ou chercheuse d'emploi, travailleur ou travailleuse, employeur ? Le service Emploi et Insertion sociale vous accueille, ...",
     "image": "maison",
+    "size": "80%",
     "url": ""
   },
   "actiris": {

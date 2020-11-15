@@ -9,7 +9,7 @@ export const scale = {
     animate: {
         width: '80%',
         opacity: 1,
-        backgroundColor:["#f8f8f8"],
+        backgroundColor:["#f5f5f5"],
         transition: {
             duration: 1.5,
             ease: easing,

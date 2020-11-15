@@ -51,7 +51,7 @@ const Grid = (props) => {
 
                         <LinkWrapper>
                             <BgLink/>
-                            <Link className={'partner-link'} href="">visiter le site</Link>
+                            <Link data-content={'visiter le site'} className={'partner-link'} href="">visiter le site</Link>
                         </LinkWrapper>
                     </PartnerItem>
                 ))}
@@ -63,7 +63,8 @@ const Grid = (props) => {
 export default withTheme(Grid)
 
 const Container = styled(motion.div)`
-
+      padding: 20px 0 100px;
+      
 `
 
 const Wrapper = styled(motion.div)`
@@ -103,13 +104,30 @@ const LinkWrapper = styled(motion.div)`
 `
 
 const Link = styled(motion.a)`
-   color: ${props => props.theme.orange};
-   font-weight: 600;
-   margin-left: 12px;
-   margin-top: 20px;
-   &:visited{
-       color: ${props => props.theme.orange};
-   }
+   position: relative;
+  display: inline-block;
+  font-size: 1em;
+  margin-left: 12px;
+  color: ${props => props.theme.orange};
+  font-weight: 800;
+  text-decoration: underline;
+  // text-decoration: none;
+  overflow: hidden;
+  &::before {
+    position: absolute;
+    content: attr(data-content);
+    top: 0;
+    left: 0;
+    width: 0;
+    color: #00286e;
+    text-decoration: underline;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: width 275ms ease;
+  }
+  &:hover::before {
+    width: 100%;
+  }
 `
 
 const BgLink = styled(motion.div)`
