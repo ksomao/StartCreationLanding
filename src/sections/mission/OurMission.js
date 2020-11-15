@@ -13,7 +13,7 @@ import {containerAnim, containerMissionAnim, fadeIn, fadeInUp, imageScale} from 
 const OurMission = (props) => {
     const animation = useAnimation();
     const [contentRef, inView] = useInView({
-        rootMargin: "-200px",
+        rootMargin: "-100px",
     })
 
     useEffect(() => {
