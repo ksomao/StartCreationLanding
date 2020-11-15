@@ -37,7 +37,7 @@ const Partners = (props) => {
                         className={'partner-description-text'}><Bold>Toujours plus de ressources</Bold> et de possibilités au niveau local et régional pour éclairer  <Bold>le parcours du
                         créateur.</Bold> Si notre approche est généraliste nous avons développé depuis 10 ans des collaborations avec
                     certaines structures afin d’affiner une <Bold>expertise sectorielle,</Bold> agrandir notre communauté d’entrepreneurs
-                    et de ressources que nous mettons désormais au service de chaque porteur de fond.</Text>
+                    et de ressources que nous mettons désormais au service de chaque porteur de projet.</Text>
                     <Button className={'cta-partner'} value={'Voir tous nos partenaires'}/>
                 </div>
                <PartnersLogoWrapper className={'partner-logos-wrapper'} >
@@ -104,8 +104,7 @@ const Title = styled(motion.h2)`
    margin-top: -30px;
    margin-left: 20px;
   @media (min-width: ${breakPoints.lg}){
-    transform: translateY(80px);
-       margin-left: 60px;
+     margin-left: 60px;
     .partner-title-item{  
       &:nth-child(1){
         margin-left: 0;

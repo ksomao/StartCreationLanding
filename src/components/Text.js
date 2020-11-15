@@ -2,10 +2,11 @@ import React from "react"
 import styled, {css, withTheme} from "styled-components";
 import {breakPoints} from "../app-config";
 import {mixinFontScalableSize} from "../helpers";
+import {motion} from "framer-motion";
 
 const Text = (props) => {
     return (
-        <TextContainer {...props}>
+        <TextContainer {...props} variants={props.variants}>
             {props.children}
         </TextContainer>
     )
@@ -13,12 +14,19 @@ const Text = (props) => {
 
 export default withTheme(Text)
 
-const TextContainer = styled.span`
+const TextContainer = styled(motion.span)`
 font-size: calc(${props => props.size + "rem"} + 1vmin);
 line-height: ${props => props.lineHeight ? props.lineHeight : '170%'};
 font-weight: ${props => props.fontWeight ? props.fontWeight : 300};
 color: ${props => props.color};
 display: block;
+
+
+
+${({zIndex}) => zIndex && css`
+    position: relative;
+    z-index: ${zIndex};
+`};
 
 ${({stacked}) => stacked && css`
     & > * { display: block};

@@ -79,7 +79,7 @@ position:relative;
     }
   }
   
-  
+ 
     .rec{
           .rec-arrow {
             background: white;

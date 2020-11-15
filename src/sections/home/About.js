@@ -4,9 +4,9 @@ import styled, {withTheme} from "styled-components";
 import {useInView} from "react-intersection-observer";
 import aboutImage from "../../images/about-img.webp"
 import aboutBg from "../../images/about-decorationabout-bg.svg"
-import Button from "../../components/Button";
 import Text from "../../components/Text";
 import {breakPoints} from "../../app-config";
+import ButtonLink from "../../components/ButtonLink";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -117,7 +117,7 @@ const About = (props) => {
               <ButtonWrapper
                   variants={fadeInUp}
                   className={'about-cta'}>
-                <Button value={'Découvrez notre espace'}/>
+                <ButtonLink value={'Découvrez notre espace'} size={16}/>
               </ButtonWrapper>
             </motion.div>
           </AboutContent>

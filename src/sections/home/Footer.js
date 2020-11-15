@@ -6,12 +6,10 @@ import Text, {
     default as BodyText,
 } from "../../components/Text";
 import {Link} from "gatsby";
-import _ from "lodash"
 import {breakPoints, Links} from "../../app-config";
 
 
 const Footer = (props) => {
-
     return (
         <Container className={'footer'}>
             <FooterWrapper>
@@ -33,17 +31,22 @@ const Footer = (props) => {
                     </BodyText>
                 </BoxTextContentFooter>
                 <Nav>
-                    {_.map(props.links, link => (
-                        <StyledLink key={link.name} to={link.to}>
-                            <LinkText
-                                size={0.7}
-                                sizeMd={0.4}
-                                color={'white'}
-                            >
-                                {link.name}
-                            </LinkText>
-                        </StyledLink>
-                    ))}
+                    <StyledLink to={"/"}>
+                        <LinkText size={0.7} sizeMd={0.4} color={'white'}
+                        >Accueil</LinkText>
+                    </StyledLink>
+                    <StyledLink to={"/mission"}>
+                        <LinkText size={0.7} sizeMd={0.4} color={'white'}
+                        >A propos</LinkText>
+                    </StyledLink>
+                    <StyledLink to={"/mission"}>
+                        <LinkText size={0.7} sizeMd={0.4} color={'white'}
+                        >A propos</LinkText>
+                    </StyledLink>
+                    <StyledLink to={"/mission"}>
+                        <LinkText size={0.7} sizeMd={0.4} color={'white'}
+                        >A propos</LinkText>
+                    </StyledLink>
                 </Nav>
             </FooterWrapper>
         </Container>

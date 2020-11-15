@@ -8,6 +8,8 @@ import Text, {
     default as Title,
 } from "../../components/Text";
 import {breakPoints} from "../../app-config";
+import ButtonLink from "../../components/ButtonLink";
+import ButtonV2 from "../../components/ButtonV2";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 
@@ -78,7 +80,7 @@ const Header = (props) => {
                             Vous ne savez pas par où ni avec qui commencer ?
                             Démarrez avec Start Création car nous stimulons vos talents !
                         </Text>
-                        <Button value={'À propos de Nous'}/>
+                        <Button value={'À propos de Nous'} />
                     </HeroLeftContent>
                 </HeroLeft>
                 <HeroRight>

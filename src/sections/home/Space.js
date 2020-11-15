@@ -5,6 +5,7 @@ import Text from "../../components/Text";
 import {motion} from "framer-motion";
 import {breakPoints} from "../../app-config";
 import aboutBg from "../../images/spaces-decoration.png";
+import ButtonLink from "../../components/ButtonLink";
 
 
 function SpaceServiceItem(props) {
@@ -95,7 +96,7 @@ const Space = (props) => {
                             Emile de Béco 83 à 1050 Bruxelles.
                         </Text>
                         <div className={'space-cta'}>
-                            <Button value={'Se Renseigner'}/>
+                            <ButtonLink value={'Se Renseigner'} size={12}/>
                         </div>
                     </TextWithButton>
                     <div className="space-content-right">

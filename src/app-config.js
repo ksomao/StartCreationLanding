@@ -44,8 +44,8 @@ export const Links = {
         to: '/',
     },
     about: {
-        name: 'À propos\n',
-        to: '/',
+        name: 'À propos',
+        to: '/mission',
     },
     space: {
         name: 'Spaces',

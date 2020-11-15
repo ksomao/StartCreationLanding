@@ -6,6 +6,7 @@ import Text from "../../components/Text";
 import {breakPoints} from "../../app-config";
 import aboutBg from "../../images/events-decoration.png";
 import {motion} from "framer-motion";
+import ButtonLink from "../../components/ButtonLink";
 
 const Events = (props) => {
     const [data, setData] = useState([
@@ -45,6 +46,7 @@ const Events = (props) => {
                 className={'events-title-wrapper'}>
                 <Title>
                     <Text
+                        stacked
                         color={props.theme.orange}
                         size={2.5}
                         sizeLg={6}
@@ -54,10 +56,10 @@ const Events = (props) => {
                         className={'events-title'}>
                         <span className={'events-title-item'}>Notre</span>
                         <span className={'events-title-item'}>Agenda</span>
-                        <ButtonWrapper>
-                            <Button value={"Voir Tout"} v2/>
-                        </ButtonWrapper>
                     </Text>
+                    <ButtonWrapper>
+                        <ButtonLink value={"Voir Tout"} size={9} v2/>
+                    </ButtonWrapper>
                 </Title>
             </EventTitleWrapper>
             <SubContainer className={'events'}>
@@ -81,14 +83,10 @@ export default withTheme(Events)
 
 const Container = styled.div`
   position: relative;
-    @media (min-width: ${breakPoints.md}){
-      height: 100vh;
-      background: ${props => props.theme.blue};
-  }
+  background: ${props => props.theme.blue};
 `
 
 const EventTitleWrapper = styled.div`
-  position:absolute;
   display: flex;
   flex-direction: column;
 `
@@ -98,44 +96,33 @@ const Title = styled(motion.h2)`
    margin-top: -30px;
    margin-left: 60px;
    z-index: 4;
-  .events-title-item{
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-  }
-  @media (min-width: ${breakPoints.md}){
-     margin-top: -50px;
-    .events-title-item{  
-      &:nth-child(1){
-        margin-left: 0;
-      }
-      &:nth-child(2){
-          margin-left: 15px;
-      }
-    }
-  }
+   .events-title-item{
+        &:nth-child(2){
+          margin-left: 50px;
+       }
+   }
 `
 
 const ButtonWrapper = styled.div`
   margin-left: 25px;
   @media (min-width: ${breakPoints.md}){
-    margin-top: -20px;
+    margin-top: 15px;
+    margin-left: 50px;
   }
 `
 
 const SubContainer = styled.div`
-    position:relative;
-    padding-top: 150px;
-    background: ${props => props.theme.blue};
-    padding-bottom: 100px;
-    overflow: hidden;
+    // position:relative;
+    // padding-top: 150px;
+    // background: ${props => props.theme.blue};
+    // padding-bottom: 100px;
+    // overflow: hidden;
     .img-wrapper{
          overflow: hidden;
         width: 200px;
    }
    
   @media (min-width: ${breakPoints.md}){
-     padding-top: 260px;
   }
       
 
@@ -144,6 +131,9 @@ const ContentWrapper = styled.div`
       position:relative;
       z-index: 2;
       height: 100%;
+      @media (min-width: ${breakPoints.md}){
+        padding-bottom: 100px;
+      }
 `
 
 const ImageWrapper = styled.figure`
@@ -159,7 +149,7 @@ const ImageWrapper = styled.figure`
 `
 
 const CarouselWrapper = styled.div`
-  @media (min-width: ${breakPoints.md}){
-    margin-top: 60px;
+  @media (min-width: ${breakPoints.sm}){
+    margin-top: 50px;
   }
 `

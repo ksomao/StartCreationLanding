@@ -4,6 +4,7 @@ import arrowIconWhite from "../images/cirlcleWhite.svg";
 
 import React from "react";
 import styled from "styled-components";
+import Text from "./Text";
 
 
 const Button = ({value, v2, ...props}) => {
@@ -12,7 +13,10 @@ const Button = ({value, v2, ...props}) => {
         <StyledLink className={'cta'} to={""} v2={v2}>
             {v2 && <img className={'cta-icon'} src={arrowIconWhite} alt=""/>}
             {!v2 && <img className={'cta-icon'} src={arrowIcon} alt=""/>}
-            <span className={'cta-text'}>{value}</span>
+            <Text
+                size={0.6}
+                color={props => props.theme.orange}
+                className={'cta-text'}>{value}</Text>
         </StyledLink>
     )
 }

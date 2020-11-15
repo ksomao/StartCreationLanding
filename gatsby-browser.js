@@ -3,11 +3,15 @@ import {ApolloClient, ApolloProvider, HttpLink, InMemoryCache,} from '@apollo/cl
 import fetch from 'isomorphic-fetch'
 import Layout from './src/components/layout'
 import {ThemeProvider} from "styled-components";
-import {apolloClient, theme} from "./src/app-config";
+import {apolloClient, Links, theme} from "./src/app-config";
+import Footer from "./src/sections/home/Footer";
 
 
 const wrapPageElement = ({ element, props }) => (
-    <Layout {...props}>{element}</Layout>
+    <Layout {...props}>
+            {element}
+            {/*<Footer links={Links}/>*/}
+    </Layout>
 )
 
 const wrapRootElement = ({ element }) => (
