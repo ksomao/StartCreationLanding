@@ -5,6 +5,7 @@ import Button from "../../components/Button";
 import Text from "../../components/Text";
 import {motion} from "framer-motion";
 import {breakPoints} from "../../app-config";
+import ButtonLink from "../../components/ButtonLink";
 
 const Partners = (props) => {
     return (
@@ -38,7 +39,7 @@ const Partners = (props) => {
                         créateur.</Bold> Si notre approche est généraliste nous avons développé depuis 10 ans des collaborations avec
                     certaines structures afin d’affiner une <Bold>expertise sectorielle,</Bold> agrandir notre communauté d’entrepreneurs
                     et de ressources que nous mettons désormais au service de chaque porteur de projet.</Text>
-                    <Button className={'cta-partner'} value={'Voir tous nos partenaires'}/>
+                    <ButtonLink className={'cta-partner'} value={'Voir tous nos partenaires'} linkTo={'partenaires'}/>
                 </div>
                <PartnersLogoWrapper className={'partner-logos-wrapper'} >
                    <PartnerLogos className={'partner-logos'} src={partnerLogos} alt=""/>

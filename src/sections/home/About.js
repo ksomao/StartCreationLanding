@@ -7,40 +7,13 @@ import aboutBg from "../../images/about-decorationabout-bg.svg"
 import Text from "../../components/Text";
 import {breakPoints} from "../../app-config";
 import ButtonLink from "../../components/ButtonLink";
-
-let easing = [0.6, -0.05, 0.01, 0.99];
-
-const fadeInUp = {
-  initial: {
-    y: 60,
-    opacity: 0,
-    transition: {duration: 0.6, ease: easing}
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: easing,
-      delayChildren: 2,
-    }
-  }
-};
-
-const stagger = {
-  animate: {
-    transition: {
-      delayChildren: 2,
-      staggerChildren: 0.25
-    }
-  }
-};
+import {containerAboutAnim, fadeInUp, stagger} from "../../animation";
 
 
 const About = (props) => {
   const animation = useAnimation();
   const [contentRef, inView] = useInView({
-    rootMargin: "-100px",
+    rootMargin: "0px",
   })
 
   useEffect(() => {
@@ -54,15 +27,7 @@ const About = (props) => {
           ref={contentRef}
           animate={animation}
           initial='initial'
-          variants={{
-            initial: {opacity: 0},
-            animate: {
-              opacity: 1,
-              transition: {
-                duration: 1.2,
-              }
-            }
-          }}
+          variants={containerAboutAnim}
           className={'about'}>
         <motion.div
             variants={stagger}
@@ -103,7 +68,7 @@ const About = (props) => {
                     color={"white"}
                     maxWidthLg={'500px'}
                     fontWeight={100}
-                    size={0.5}
+                    size={0.6}
                     className={'about-description-excerpt'}><span className={'bold'}>Start Création and Co</span> est un <span className={'bold'}>laboratoire</span> dédié à
                   l’accompagnement d’idées créatives et innovantes.
                   Start Création and Co est né d’une dynamique commune d’entrepreneurs au sein d’un espace
@@ -117,7 +82,7 @@ const About = (props) => {
               <ButtonWrapper
                   variants={fadeInUp}
                   className={'about-cta'}>
-                <ButtonLink value={'Découvrez notre espace'} size={16}/>
+                <ButtonLink value={'À propos de nous.'} linkTo={'a-propos'} version={'light'} />
               </ButtonWrapper>
             </motion.div>
           </AboutContent>
@@ -194,13 +159,18 @@ const Title = styled(motion.h1)`
 `
 // --------------------------------------------
 const Description = styled(motion.h1)`
-    margin-top: 20px;
+  margin-top: 20px;
+  @media (min-width: ${breakPoints.md}){
     margin-left: 20px;
-    margin-bottom: 32px;
+    margin-bottom: 32px;;
+  }
 `
 // --------------------------------------------
 const ButtonWrapper = styled(motion.div)`
+  margin-top: 24px;
+  @media (min-width: ${breakPoints.md}){
     margin-left: 20px;
+  }
 `
 
 

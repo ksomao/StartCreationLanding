@@ -5,6 +5,10 @@ import {mixinFontScalableSize} from "../helpers";
 import {motion} from "framer-motion";
 
 const Text = (props) => {
+    if(props.debug){
+        console.log("TEXT COMPONENTS LOG",props);
+    }
+
     return (
         <TextContainer {...props} variants={props.variants}>
             {props.children}
@@ -40,6 +44,13 @@ ${({debug}) => debug && css`
       border: 0.5px solid red;
       display: block;
       background: #ffc0c0;
+    };
+`};
+
+${({noLink}) => noLink && css`
+    & > a, & > a:visited { 
+      color: ${props => props.theme.orange};
+      text-decoration: none;
     };
 `};
 

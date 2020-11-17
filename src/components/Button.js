@@ -11,8 +11,6 @@ const Button = ({value, v2, ...props}) => {
 
     return (
         <StyledLink className={'cta'} to={""} v2={v2}>
-            {v2 && <img className={'cta-icon'} src={arrowIconWhite} alt=""/>}
-            {!v2 && <img className={'cta-icon'} src={arrowIcon} alt=""/>}
             <Text
                 size={0.6}
                 color={props => props.theme.orange}

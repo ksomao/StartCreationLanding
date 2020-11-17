@@ -27,7 +27,6 @@ const Grid = (props) => {
     }, [animation, inView])
 
 
-    console.log(partners);
     return (
         <Container
             ref={contentRef}
@@ -64,13 +63,13 @@ export default withTheme(Grid)
 
 const Container = styled(motion.div)`
       padding: 20px 0 100px;
-      
 `
 
 const Wrapper = styled(motion.div)`
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
+    padding: 20px;
     @media (min-width: ${breakPoints.md}){
         margin: 0 auto;
         max-width: 1000px;
@@ -84,6 +83,7 @@ const Wrapper = styled(motion.div)`
 
 const PartnerItem = styled(motion.div)`
     max-width: 320px;
+    
 `
 const WrapperImage = styled(motion.div)`
   height: 100px;

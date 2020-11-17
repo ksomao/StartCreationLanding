@@ -4,13 +4,11 @@ import fetch from 'isomorphic-fetch'
 import Layout from './src/components/layout'
 import {ThemeProvider} from "styled-components";
 import {apolloClient, Links, theme} from "./src/app-config";
-import Footer from "./src/sections/home/Footer";
 
 
 const wrapPageElement = ({ element, props }) => (
     <Layout {...props}>
             {element}
-            {/*<Footer links={Links}/>*/}
     </Layout>
 )
 

@@ -7,38 +7,10 @@ import {breakPoints} from "../../app-config";
 import aboutBg from "../../images/events-decoration.png";
 import {motion} from "framer-motion";
 import ButtonLink from "../../components/ButtonLink";
+import data from "../../data/events.json"
 
 const Events = (props) => {
-    const [data, setData] = useState([
-        {
-            id: 1,
-            title: 'Champs Sacrés - Muriel de Crayencour',
-            desc: 'Dans cette exposition, Muriel de Crayencour présente peintures, sculptures, dessins et broderie comme une ode au corps féminin, à sa sacralité et à sa fragilité. Objet de nombreuses projections, ce corps continue aujourd\'hui à susciter des prises de pouvoir.'
-        },
-        {
-            id: 2,
-            title: 'Exposition "Qui Dit Mieux ?" sur le thème "INTIME"',
-            desc: 'Le concours " Qui Dit Mieux ? " 2020 suit son cours avec la 2e exposition collective et itinérante du 21/09 au 7/10/2020 au See U - bâtiment H (Kinograph) au 1er étage.\n' +
-                'Découvrez les oeuvres des 28 lauréats du concours "Qui Dit Mieux ?" 2020.\n' +
-                'Les jeunes artistes de 15 à 30 ans vous présentent leurs oeuvres réalisées sur le thème "INTIME"'
-        },
-        {
-            id: 3,
-            title: 'Lab Radio pour ado avec Pulse air',
-            desc: 'la web radio Pulse Air lance le " Lab Ado ", une nouvelle expérience pour s\'approprier et inventer la radio de demain. pour les 14 -17 ans c\'est une occasion avec l\'aide d\'un animateur pro, tout le long de la saison scolaire pour tester et développer ses compétences, créer des moments d\'antenne, de podcast et de live !'
-        },
-        {
-            id: 4, title: 'Nocturne au Muséum des Sciences naturelles\n', desc: 'Balades contées\n' +
-                'Au programme chez nous, des promenades contées "animis mundi" de la compagnie Des Capes et des Mots. Durée :1 h\n' +
-                'Dans la nouvelle Galerie "Planète Vivante", assistez à la performance à multidiffusion sonore basée sur le son de nos rêves, elle nous transporte hors de tout contrôle dans une atmosphère émouvante\n' +
-                'Durée : 40 min'
-        },
-        {
-            id: 5,
-            title: 'Champs Sacrés - Muriel de Crayencour',
-            desc: 'Dans cette exposition, Muriel de Crayencour présente peintures, sculptures, dessins et broderie comme une ode au corps féminin, à sa sacralité et à sa fragilité. Objet de nombreuses projections, ce corps continue aujourd\'hui à susciter des prises de pouvoir.\n'
-        }
-    ]);
+
 
     return (
         <Container>
@@ -57,9 +29,6 @@ const Events = (props) => {
                         <span className={'events-title-item'}>Notre</span>
                         <span className={'events-title-item'}>Agenda</span>
                     </Text>
-                    <ButtonWrapper>
-                        <ButtonLink value={"Voir Tout"} size={9} v2/>
-                    </ButtonWrapper>
                 </Title>
             </EventTitleWrapper>
             <SubContainer className={'events'}>
@@ -71,7 +40,7 @@ const Events = (props) => {
                             className="events-decoration-bg"/>
                     </ImageWrapper>
                     <CarouselWrapper className="carousel-wrapper">
-                        <Carousel data={data}/>
+                        <Carousel data={Object.entries(data)[0][1]}/>
                     </CarouselWrapper>
                 </ContentWrapper>
             </SubContainer>

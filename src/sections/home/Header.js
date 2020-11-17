@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import styled, {withTheme} from "styled-components";
 import heroImg from "../../images/hero-xl.webp"
 import heroImgMin from "../../images/hero-lg.webp"
@@ -8,48 +8,38 @@ import Text, {
     default as Title,
 } from "../../components/Text";
 import {breakPoints} from "../../app-config";
+import {motion, useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
+import {containerAboutAnim, containerAnim, fadeIn, fadeInUp, imageScale} from "../../animation";
 import ButtonLink from "../../components/ButtonLink";
-import ButtonV2 from "../../components/ButtonV2";
-
-let easing = [0.6, -0.05, 0.01, 0.99];
-
-const fadeInUp = {
-    initial: {
-        y: 60,
-        opacity: 0,
-        transition: {duration: 0.6, ease: easing}
-    },
-    animate: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.6,
-            ease: easing,
-            delayChildren: 2,
-        }
-    }
-};
-
-const stagger = {
-    animate: {
-        transition: {
-            delayChildren: 1,
-            staggerChildren: 0.25
-        }
-    }
-};
 
 const Header = (props) => {
+    const animation = useAnimation();
+    const [contentRef, inView] = useInView({
+        rootMargin: "0px",
+    })
+
+    useEffect(() => {
+        if (inView) {
+            console.log("in view header ");
+            animation.start("animate")
+        }
+    }, [animation, inView])
 
     return (
         <Container
             className={'hero'}>
             <Blob className={'hero-blob'} src={heroBg} alt="start creation decoration background"/>
-            <Wrapper>
+            <Wrapper
+                ref={contentRef}
+                animate={animation}
+                initial='initial'
+                variants={containerAnim}>
                 <HeroLeft className="hero-left">
                     <HeroLeftContent className="hero-left-content">
                         <div className="hero-left-content-title-wrapper">
                             <Title
+                                variants={fadeInUp}
                                 stacked
                                 color={props.theme.orange}
                                 size={2.6}
@@ -65,6 +55,7 @@ const Header = (props) => {
                             </Title>
                         </div>
                         <Text
+                            variants={fadeInUp}
                             as={'span'}
                             color={props.theme.blue}
                             maxWidthLg={'430px'}
@@ -80,18 +71,25 @@ const Header = (props) => {
                             Vous ne savez pas par où ni avec qui commencer ?
                             Démarrez avec Start Création car nous stimulons vos talents !
                         </Text>
-                        <Button value={'À propos de Nous'} />
+                        <ButtonWrapper
+                            variants={fadeInUp}>
+                            <ButtonLink value={'En savoir plus.'} linkTo={'a-propos'} />
+                        </ButtonWrapper>
                     </HeroLeftContent>
                 </HeroLeft>
                 <HeroRight>
-                    <HeroFigure className={'hero-right-figure'}>
+                    <HeroFigure
+                        className={'hero-right-figure'}>
                         <HeroImage
+                            variants={fadeInUp}
                             className={'hero-right-image'}
                             src={heroImg}
-                            srcset={heroImgMin + " 415w" }
+                            srcset={heroImgMin + " 415w"}
                             alt=""/>
                     </HeroFigure>
-                    <Testimonial className={'hero-testimonial'}>
+                    <Testimonial
+                        variants={fadeInUp}
+                        className={'hero-testimonial'}>
                         <Text
                             color={'white'}
                             fontWeight={'800'}
@@ -113,20 +111,12 @@ const Header = (props) => {
 }
 
 const Container = styled.div`
-    margin-top: 100px;
-   //  @media  (min-width:  ${breakPoints.sm}) {
-   //    background: green;
-   //  }
-   // 
-   //      @media  (min-width:  ${breakPoints.md}) {
-   //      background: blueviolet;
-   //  }
-   //
-   //  @media  (min-width:  ${breakPoints.lg}) {
-   //  background: orangered;
-   // }
+    position:relative;
+    @media  (min-width:  ${breakPoints.md}) {
+        min-height: 70vh;
+    }
 `
-const Blob = styled.img`
+const Blob = styled(motion.img)`
   position: absolute;
   z-index: -1;
   top: 0;
@@ -134,7 +124,7 @@ const Blob = styled.img`
   width: 40%;
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   position:relative;
   padding: 20px;
   @media  (min-width:  ${breakPoints.lg}){
@@ -146,14 +136,14 @@ const Wrapper = styled.div`
   }
 `
 
-const HeroLeft = styled.div`
+const HeroLeft = styled(motion.div)`
   position:relative;
   @media  (min-width:  ${breakPoints.md}){
       width: 100%;
   }
 `
 
-const HeroLeftContent = styled.div`
+const HeroLeftContent = styled(motion.div)`
 @media (min-width:${breakPoints.lg}){
   position:absolute;
   left: 0;
@@ -162,7 +152,7 @@ const HeroLeftContent = styled.div`
 }
 `
 
-const HeroRight = styled.div`
+const HeroRight = styled(motion.div)`
   position:relative;
   margin-top: 32px;
   @media (min-width:  ${breakPoints.lg}) {
@@ -173,7 +163,7 @@ const HeroRight = styled.div`
 
   }
 `
-const HeroFigure = styled.figure`
+const HeroFigure = styled(motion.figure)`
   overflow: hidden;
   max-width: 780px;
   position:relative;
@@ -186,10 +176,10 @@ const HeroFigure = styled.figure`
        margin-top: 80px;
   }
 `
-const HeroImage = styled.img`
+const HeroImage = styled(motion.img)`
  width: 100% ;
 `
-const Testimonial = styled.div`
+const Testimonial = styled(motion.div)`
   position:absolute;
   background: ${props => props.theme.blue};
   width: 250px;
@@ -208,7 +198,7 @@ const Testimonial = styled.div`
   }
 `
 
-
-
+const ButtonWrapper= styled(motion.div)`
+`
 
 export default withTheme(Header)

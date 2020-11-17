@@ -64,6 +64,7 @@ const Header = (props) => {
 export default withTheme(Header)
 
 const Container = styled(motion.div)`
+  position:relative;
 `
 const Wrapper = styled.div`
   padding-left: 20px;

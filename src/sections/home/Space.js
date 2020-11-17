@@ -1,11 +1,13 @@
-import React from "react"
+import React, {useEffect} from "react"
 import styled, {withTheme} from "styled-components";
 import Button from "../../components/Button";
 import Text from "../../components/Text";
-import {motion} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
 import {breakPoints} from "../../app-config";
 import aboutBg from "../../images/spaces-decoration.png";
 import ButtonLink from "../../components/ButtonLink";
+import {useInView} from "react-intersection-observer";
+import {containerAnim, fadeInUp} from "../../animation";
 
 
 function SpaceServiceItem(props) {
@@ -14,12 +16,12 @@ function SpaceServiceItem(props) {
             <Text
                 size={0.6}
                 fontWeight={800}
-                color={props => props.theme.orange}
+                color={'#F78240'}
                 className={"space-service-item-plus"}>+</Text>
             <Text
                 marginLeft={16}
                 font-weight={600}
-                color={props => props.theme.blue}
+                color={'#010253'}
                 textTransform={'capitalize'}
                 size={0.6}
                 fontWeight={600}
@@ -30,6 +32,18 @@ function SpaceServiceItem(props) {
 
 
 const Space = (props) => {
+    const animation = useAnimation();
+    const [contentRef, inView] = useInView({
+        rootMargin: "-100px",
+    })
+
+    useEffect(() => {
+        if (inView) {
+            animation.start("animate")
+        }
+    }, [animation, inView])
+
+
     const servicesLeft = [
         "Accès 24/7",
         "Internet 400 mb/s",
@@ -46,18 +60,23 @@ const Space = (props) => {
 
     const listLeft = () => {
         return servicesLeft.map((service, index) => (
-            <SpaceServiceItem service={service}/>
+            <SpaceServiceItem key={index} service={service}/>
         ))
     }
 
     const listRight = () => {
         return servicesRight.map((service, index) => (
-            <SpaceServiceItem service={service}/>
+            <SpaceServiceItem key={index} service={service}/>
         ))
     }
 
     return (
-        <Container className={'space'}>
+        <Container className={'space'}
+                   ref={contentRef}
+                   animate={animation}
+                   initial='initial'
+                   variants={containerAnim}
+        >
             <div className="imgWrapper">
                 <motion.img
                     src={aboutBg}
@@ -67,6 +86,7 @@ const Space = (props) => {
             <div className="space-content">
                 <Title className={'space-title'}>
                     <Text
+                        variants={fadeInUp}
                         color={props.theme.orange}
                         size={2.5}
                         sizeLg={6}
@@ -82,6 +102,7 @@ const Space = (props) => {
                 <ContentContainer className="space-content-column">
                     <TextWithButton className="space-content-left">
                         <Text
+                            variants={fadeInUp}
                             as={'p'}
                             color={props.theme.blue}
                             fontWeight={300}
@@ -96,11 +117,13 @@ const Space = (props) => {
                             Emile de Béco 83 à 1050 Bruxelles.
                         </Text>
                         <div className={'space-cta'}>
-                            <ButtonLink value={'Se Renseigner'} size={12}/>
+                            <ButtonLink value={'Découvrez notre espace'} linkTo={'/contact'}/>
                         </div>
                     </TextWithButton>
                     <div className="space-content-right">
-                        <ServiceList className="space-service-list-wrapper">
+                        <ServiceList
+                            variants={fadeInUp}
+                            className="space-service-list-wrapper">
                             <div className="space-service-list left">
                                 {listLeft()}
                             </div>
@@ -118,7 +141,7 @@ const Space = (props) => {
 export default withTheme(Space)
 
 //-------------------------------------------
-const Container = styled.div`
+const Container = styled(motion.div)`
   overflow-x: hidden;
   padding-top: 100px;
   position:relative;

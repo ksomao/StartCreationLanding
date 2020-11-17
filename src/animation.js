@@ -15,7 +15,24 @@ export const scale = {
             ease: easing,
         }
     }
-};
+}
+
+export const scaleX = {
+    initial: {
+        width: 0,
+        opacity: 0,
+    },
+    animate: {
+        width: '100%',
+        opacity: 1,
+        transition: {
+            delayChildren: 2,
+            staggerChildren: 0.25,
+            duration: 1.5,
+            ease: easing,
+        }
+    }
+}
 
 export const containerAnim = {
     initial: {opacity: 0},
@@ -23,6 +40,36 @@ export const containerAnim = {
         opacity: 1,
         transition: {
             staggerChildren: 0.2,
+        }
+    }
+}
+
+export const containerAnimContact = {
+    initial: {opacity: 0},
+    animate: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 2,
+        }
+    }
+}
+
+export const stagger = {
+    animate: {
+        transition: {
+            delayChildren: 1,
+            staggerChildren: 0.25
+        }
+    }
+};
+
+export const containerAboutAnim = {
+    initial: {opacity: 0},
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 1.2,
         }
     }
 }
@@ -39,10 +86,26 @@ export const containerMissionAnim = {
     }
 }
 
+export const subContainerAnimation = {
+    initial: {
+        opacity: 0,
+        width:0,
+    },
+    animate: {
+        opacity: 1,
+        width:'100%',
+        transition: {
+            staggerChildren: 0.2,
+            duration: 1.2,
+            delayChildren: 1,
+        }
+    }
+}
+
 export const imageScale = {
     initial: {
-        x: "-100%",
-        opacity: 0,
+        x: "100%",
+        opacity: 1,
     },
     animate: {
         x: '0',
@@ -60,7 +123,7 @@ export const fadeIn = {
     },
     animate: {
         opacity: 1,
-        transition: {duration: 1.5, ease: easing}
+        transition: {duration: 0.5, ease: easing}
     }
 };
 
