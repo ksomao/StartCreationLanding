@@ -15,4 +15,4 @@ const Partenaires = () => {
 const Container = styled.div`
   overflow: hidden;
 `
-export default Partenaires
+export default withTheme(Partenaires)

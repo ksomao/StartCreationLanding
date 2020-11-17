@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "../sections/contact/Grid";
 import SEO from "../components/seo";
 import {motion} from "framer-motion";
-import styled from "styled-components";
+import styled, {withTheme} from "styled-components";
 
 
 const Contact = () => {
@@ -15,4 +15,4 @@ const Contact = () => {
 
 const Container = styled(motion.div)``
 
-export default Contact
+export default withTheme(Contact)

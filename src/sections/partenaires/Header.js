@@ -1,8 +1,6 @@
 import React,{useEffect} from "react";
 import styled, {withTheme} from "styled-components";
-import Text, {
-    default as Title,
-} from "../../components/Text";
+import Text, {default as Title,} from "../../components/Text";
 import {breakPoints} from "../../app-config";
 import circleLogo from "../../images/circleLogo.svg";
 import {motion, useAnimation} from "framer-motion";
@@ -13,7 +11,7 @@ import Menu from "../common/Menu";
 const Header = (props) => {
     const animation = useAnimation();
     const [contentRef, inView] = useInView({
-        rootMargin: "-100px",
+        rootMargin: "0px",
     })
 
     useEffect(() => {

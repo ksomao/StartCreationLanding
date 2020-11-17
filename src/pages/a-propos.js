@@ -6,7 +6,7 @@ import OurMission from "../sections/mission/OurMission";
 import OurServices from "../sections/mission/OurServices";
 import {Links} from "../app-config";
 import Word from "../sections/mission/Word";
-import styled from "styled-components";
+import styled, {withTheme} from "styled-components";
 import SEO from "../components/seo";
 
 
@@ -27,7 +27,7 @@ const Container = styled.div`
   overflow: hidden;
 `
 
-export default APropos
+export default withTheme(APropos)
 
 
 

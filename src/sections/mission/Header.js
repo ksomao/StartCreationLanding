@@ -16,7 +16,7 @@ import Menu from "../common/Menu";
 const Header = (props) => {
     const animation = useAnimation();
     const [contentRef, inView] = useInView({
-        rootMargin: "-100px",
+        rootMargin: "0px",
     })
 
     useEffect(() => {
