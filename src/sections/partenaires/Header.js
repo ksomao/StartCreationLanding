@@ -10,7 +10,6 @@ import {useInView} from "react-intersection-observer";
 import {containerAnim, fadeIn, scale} from "../../animation";
 import Menu from "../common/Menu";
 
-
 const Header = (props) => {
     const animation = useAnimation();
     const [contentRef, inView] = useInView({
@@ -43,20 +42,22 @@ const Header = (props) => {
                 <MenuWrapper>
                     <Menu/>
                 </MenuWrapper>
-                <Title
-                    stacked
-                    color={props.theme.orange}
-                    fontWeight={800}
-                    size={3.5}
-                    sizeMd={6}
-                    lineHeight={1}
-                    textTransform={'capitalize'}
-                    zIndex={3}
-                    className={'mission-main-title'}
-                >
-                    <span>Nos</span>
-                    <span>Partenaires</span>
-                </Title>
+                <TitleWrapper>
+                    <Title
+                        stacked
+                        color={props.theme.orange}
+                        fontWeight={800}
+                        size={3.5}
+                        sizeMd={6}
+                        lineHeight={1}
+                        textTransform={'capitalize'}
+                        zIndex={3}
+                        className={'mission-main-title'}
+                    >
+                        <span>Nos</span>
+                        <span>Partenaires</span>
+                    </Title>
+                </TitleWrapper>
             </Wrapper>
         </Container>
     )
@@ -74,7 +75,6 @@ const MenuWrapper = styled.div`
 `
 
 const Wrapper = styled.div`
-  padding-left: 20px;
   width: 1000px;
   margin: 0 auto;
   @media (min-width: ${breakPoints.md}){
@@ -82,10 +82,17 @@ const Wrapper = styled.div`
   }
 `
 
+const TitleWrapper = styled.div`
+  padding-top: 90px;
+  @media (min-width: ${breakPoints.md}){
+    padding-top: 0;
+  }
+`
+
 const Bg = styled(motion.div)`
   position:absolute;
   width: 80%;
-  height: 150px;
+  height: 180px;
   background: #f1f1f1;
   opacity: 0.2;
    @media (min-width: ${breakPoints.md}){

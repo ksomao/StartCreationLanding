@@ -21,7 +21,6 @@ const Header = (props) => {
 
     useEffect(() => {
         if (inView) {
-            console.log("in view header ");
             animation.start("animate")
         }
     }, [animation, inView])

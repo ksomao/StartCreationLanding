@@ -70,14 +70,8 @@ const Container = styled(motion.div)`
 `
 const Wrapper = styled.div`
   padding-left: 20px;
-  padding-top: 150px;
   width: 1000px;
   margin: 0 auto;
-  @media (min-width: ${breakPoints.md}){
-    .mission-main-title{
-      margin-left: -50px;
-    }
-  }
 `
 
 const Bg = styled(motion.div)`

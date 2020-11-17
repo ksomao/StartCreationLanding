@@ -13,7 +13,9 @@ const Menu = (props) => {
     return (
         <Container>
             <ContentWrapper>
-                <Logo src={ScLogo}/>
+                <HomeLink to={"/"}>
+                    <Logo src={ScLogo}/>
+                </HomeLink>
                 <LinkWrapper>
                     <StyledLink to={"/"}>
                         <LinkText className={'menu-link'}
@@ -88,3 +90,4 @@ margin-left: 16px;
     cursor:pointer;
   }
 `
+const HomeLink = styled(Link)``
