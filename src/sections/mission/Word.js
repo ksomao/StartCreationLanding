@@ -34,7 +34,7 @@ const Word = (props) => {
         if (inView) {
             animation.start("animate")
         }
-    }, [animation, inView])
+    }, [])
 
     return (
         <Container

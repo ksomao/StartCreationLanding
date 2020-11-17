@@ -9,8 +9,6 @@ import ButtonLink from "../../components/ButtonLink";
 import data from "../../data/events.json"
 
 const Events = (props) => {
-
-
     return (
         <Container>
             <EventTitleWrapper

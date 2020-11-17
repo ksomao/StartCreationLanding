@@ -50,7 +50,7 @@ const Grid = (props) => {
 
                         <LinkWrapper>
                             <BgLink/>
-                            <Link data-content={'visiter le site'} className={'partner-link'} href="">visiter le site</Link>
+                            <Link data-content={'visiter le site'} className={'partner-link'} href={partner.url}>visiter le site</Link>
                         </LinkWrapper>
                     </PartnerItem>
                 ))}

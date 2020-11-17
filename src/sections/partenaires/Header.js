@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import styled, {withTheme} from "styled-components";
 import Text, {
     default as Title,
@@ -8,7 +8,6 @@ import circleLogo from "../../images/circleLogo.svg";
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {containerAnim, fadeIn, scale} from "../../animation";
-import {useEffect} from "react";
 import Menu from "../common/Menu";
 
 

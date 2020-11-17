@@ -10,17 +10,6 @@ import {default as LinkText} from "../../components/Text";
 
 
 const Menu = (props) => {
-    const animation = useAnimation()
-    const [contentRef, inView] = useInView({
-        rootMargin: "-100px",
-    })
-
-    useEffect(() => {
-        if (inView) {
-            animation.start("animate")
-        }
-    }, [animation, inView])
-
     return (
         <Container>
             <ContentWrapper>
