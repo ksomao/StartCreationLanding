@@ -56,7 +56,7 @@ const Header = (props) => {
                     className={'mission-main-title'}
                 >
                     <span>Nos</span>
-                    <span>Partenaireees</span>
+                    <span>Partenaires</span>
                 </Title>
             </Wrapper>
         </Container>
