@@ -14,21 +14,9 @@ import Menu from "../common/Menu";
 
 
 const Header = (props) => {
-    const animation = useAnimation();
-    const [contentRef, inView] = useInView({
-        rootMargin: "0px",
-    })
-
-    useEffect(() => {
-        if (inView) {
-            animation.start("animate")
-        }
-    }, [animation, inView])
-
     return (
         <Container
-            ref={contentRef}
-            animate={animation}
+            animate='animate'
             initial='initial'
             variants={containerAnim}
         >
