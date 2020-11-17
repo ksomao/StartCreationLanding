@@ -25,8 +25,6 @@ font-weight: ${props => props.fontWeight ? props.fontWeight : 300};
 color: ${props => props.color};
 display: block;
 
-
-
 ${({zIndex}) => zIndex && css`
     position: relative;
     z-index: ${zIndex};
@@ -51,6 +49,12 @@ ${({noLink}) => noLink && css`
     & > a, & > a:visited { 
       color: ${props => props.theme.orange};
       text-decoration: none;
+    };
+`};
+
+${({linkHoverColor}) => linkHoverColor && css`
+    & > a:hover { 
+      color: ${props => props.theme.orange};
     };
 `};
 

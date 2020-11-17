@@ -1,6 +1,5 @@
 import React, {useEffect} from "react"
 import styled, {withTheme} from "styled-components";
-import Button from "../../components/Button";
 import Text from "../../components/Text";
 import {motion, useAnimation} from "framer-motion";
 import {breakPoints} from "../../app-config";
@@ -117,7 +116,7 @@ const Space = (props) => {
                             Emile de Béco 83 à 1050 Bruxelles.
                         </Text>
                         <div className={'space-cta'}>
-                            <ButtonLink value={'Découvrez notre espace'} linkTo={'/contact'}/>
+                            <ButtonLink value={'Découvrez notre espace.'} linkTo={'/contact'}/>
                         </div>
                     </TextWithButton>
                     <div className="space-content-right">

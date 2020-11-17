@@ -7,6 +7,7 @@ import {useInView} from "react-intersection-observer";
 import {containerAnim, fadeInUp} from "../../animation";
 import Text, {default as Title} from "../../components/Text";
 import {breakPoints} from "../../app-config";
+import Menu from "../common/Menu";
 
 
 const Grid = (props) => {
@@ -29,6 +30,9 @@ const Grid = (props) => {
             variants={containerAnim}
         >
             <CircleLogo src={circleLogo}/>
+            <MenuWrapper>
+                <Menu/>
+            </MenuWrapper>
             <Wrapper>
                 <Left>
                     <LeftTextWrapper>
@@ -105,6 +109,10 @@ const Container = styled(motion.div)`
   @media (min-width: ${breakPoints.md}){
     height: 100%;
   }
+`
+
+const MenuWrapper = styled(motion.div)`
+  position: absolute;
 `
 
 const CircleLogo = styled(motion.img)`

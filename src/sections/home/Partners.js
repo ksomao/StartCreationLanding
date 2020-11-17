@@ -1,7 +1,7 @@
 import React from "react"
 import styled, {withTheme} from "styled-components";
 import partnerLogos from "../../images/partner-image.png";
-import Button from "../../components/Button";
+import bgdeco from "../../images/spaces-decoration.png";
 import Text from "../../components/Text";
 import {motion} from "framer-motion";
 import {breakPoints} from "../../app-config";
@@ -10,6 +10,7 @@ import ButtonLink from "../../components/ButtonLink";
 const Partners = (props) => {
     return (
         <Container className={'partner'}>
+            <Bg  src={bgdeco} alt=""/>
             <Title className="partner-title-wrapper">
                 <Text
                     stacked
@@ -39,7 +40,7 @@ const Partners = (props) => {
                         créateur.</Bold> Si notre approche est généraliste nous avons développé depuis 10 ans des collaborations avec
                     certaines structures afin d’affiner une <Bold>expertise sectorielle,</Bold> agrandir notre communauté d’entrepreneurs
                     et de ressources que nous mettons désormais au service de chaque porteur de projet.</Text>
-                    <ButtonLink className={'cta-partner'} value={'Voir tous nos partenaires'} linkTo={'partenaires'}/>
+                    <ButtonLink className={'cta-partner'} value={'Voir tous nos partenaires.'} linkTo={'/partenaires'}/>
                 </div>
                <PartnersLogoWrapper className={'partner-logos-wrapper'} >
                    <PartnerLogos className={'partner-logos'} src={partnerLogos} alt=""/>
@@ -52,10 +53,15 @@ const Partners = (props) => {
 export default withTheme(Partners)
 
 const Container = styled.div`
+position: relative;
 max-width: 1400px;
 margin: 0 auto ;
 padding-bottom: 100px;
 overflow-x: hidden;
+
+   @media (min-width: ${breakPoints.lg}){
+     margin-top: 100px;
+  }
 .partner-content{
   display: grid;
   grid-template-columns: 1fr; 
@@ -84,14 +90,21 @@ overflow-x: hidden;
  }
 `
 
+const Bg = styled(motion.img)`
+  position:absolute;
+  z-index: -2;
+  bottom: 0;
+`
+
+
 const PartnersContent = styled(motion.h2)`
   display: flex;
   align-items: center;
+
 `
 const PartnersLogoWrapper = styled.div`
- margin-top: 32px;
-  max-width: 600px;
-
+ max-width: 600px;
+ margin-left: -80px;
 `
 const PartnerLogos = styled.img`
  width: 100%;

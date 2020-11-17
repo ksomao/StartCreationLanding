@@ -1,64 +1,34 @@
 import React, {useEffect, useState} from "react"
 import styled from "styled-components";
-import ReactCarousel from 'react-elastic-carousel'
 import ButtonV2 from "./ButtonV2";
 import Text from "./Text";
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import CarouselItem from "./CarouselItem";
 
 const responsive = {
     superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
+        breakpoint: {max: 4000, min: 1280},
         items: 4
     },
     desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 4
+        breakpoint: {max: 1280, min: 1024},
+        items: 3
     },
     tablet: {
-        breakpoint: { max: 1024, min: 464 },
+        breakpoint: {max: 1024, min: 640},
         items: 2
     },
     mobile: {
-        breakpoint: { max: 464, min: 0 },
+        breakpoint: {max: 640, min: 0},
         items: 1
     }
 };
 
-const CarouselCont = ({data}) => {
 
-    const animation = useAnimation();
-    const [contentRef, inView] = useInView({
-        rootMargin: "-100px",
-    })
-
-
-    const getItems = () => {
-        return data.map((item, index) => (
-            <CarouselItem
-                className={'carousel-item'}
-                key={item.title + index}>
-                <Text
-                    color={'white'}
-                    fontWeight={700}
-                    lineHeight={1.5}
-                    size={0.8}
-                    marginBottom={24}
-                    className={'carousel-item-title'}>{item.title}</Text>
-                <Text
-                    color={'white'}
-                    font-weight={200}
-                    size={0.6}
-                    opacity={'80%'}
-                    lineHeight={'170%'}
-                    className={'carousel-item-description'}>{item.desc}</Text>
-                <ButtonV2 value={'en savoir plus'}/>
-            </CarouselItem>))
-    }
-
+const EventsCarousel = ({data}) => {
     return (
         <Container>
             <Carousel
@@ -66,38 +36,22 @@ const CarouselCont = ({data}) => {
                 draggable={false}
                 showDots={false}
                 responsive={responsive}>
-                {getItems()}
+                {data.map((item, index) => (
+                    <CarouselItem
+                        item={item}
+                        className={'carousel-item'}
+                        key={item.title + index}>
+                    </CarouselItem>
+                ))}
             </Carousel>
         </Container>
     )
 }
 
-export default CarouselCont
+export default EventsCarousel
 
 
 const Container = styled.div`
-position:relative;
-  
-  .test{
-    position:absolute;
-    right: 0;
-    top: -200px;
-    button{
-      background: white;
-      border-radius: 200%;
-      padding: 20px;
-      height: 40px;
-      width: 40px;
-      border: none;    
-    }
-  }
-  
+  position:relative; 
 `
 
-const CarouselItem = styled(motion.div)`
-         width: 85%;
-         &:focus{
-          border: none;
-          outline: none;
-         }
-`

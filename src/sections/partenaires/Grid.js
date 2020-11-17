@@ -62,7 +62,10 @@ const Grid = (props) => {
 export default withTheme(Grid)
 
 const Container = styled(motion.div)`
-      padding: 20px 0 100px;
+  padding: 20px 0 100px;
+  @media (min-width: ${breakPoints.lg}){
+    min-height: 50vh; 
+  }
 `
 
 const Wrapper = styled(motion.div)`

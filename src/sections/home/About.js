@@ -82,7 +82,7 @@ const About = (props) => {
               <ButtonWrapper
                   variants={fadeInUp}
                   className={'about-cta'}>
-                <ButtonLink value={'À propos de nous.'} linkTo={'a-propos'} version={'light'} />
+                <ButtonLink value={'À propos de nous.'} linkTo={'/a-propos'} version={'light'} />
               </ButtonWrapper>
             </motion.div>
           </AboutContent>

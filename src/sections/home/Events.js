@@ -1,7 +1,6 @@
 import React, { useState} from "react"
 import styled, {withTheme} from "styled-components";
 import Carousel from "../../components/Carousel";
-import Button from "../../components/Button";
 import Text from "../../components/Text";
 import {breakPoints} from "../../app-config";
 import aboutBg from "../../images/events-decoration.png";

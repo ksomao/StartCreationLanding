@@ -3,15 +3,15 @@ import styled, {withTheme} from "styled-components";
 import heroImg from "../../images/hero-xl.webp"
 import heroImgMin from "../../images/hero-lg.webp"
 import heroBg from "../../images/header-bg.svg"
-import Button from "../../components/Button";
 import Text, {
     default as Title,
 } from "../../components/Text";
 import {breakPoints} from "../../app-config";
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
-import {containerAboutAnim, containerAnim, fadeIn, fadeInUp, imageScale} from "../../animation";
+import {containerAnim,fadeInUp } from "../../animation";
 import ButtonLink from "../../components/ButtonLink";
+import Menu from "../common/Menu";
 
 const Header = (props) => {
     const animation = useAnimation();
@@ -29,6 +29,7 @@ const Header = (props) => {
     return (
         <Container
             className={'hero'}>
+            <Menu/>
             <Blob className={'hero-blob'} src={heroBg} alt="start creation decoration background"/>
             <Wrapper
                 ref={contentRef}
@@ -73,7 +74,7 @@ const Header = (props) => {
                         </Text>
                         <ButtonWrapper
                             variants={fadeInUp}>
-                            <ButtonLink value={'En savoir plus.'} linkTo={'a-propos'} />
+                            <ButtonLink value={'En savoir plus.'} linkTo={'/a-propos'} />
                         </ButtonWrapper>
                     </HeroLeftContent>
                 </HeroLeft>

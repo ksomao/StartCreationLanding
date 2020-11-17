@@ -7,10 +7,10 @@ import OurServices from "../sections/mission/OurServices";
 import {Links} from "../app-config";
 import Word from "../sections/mission/Word";
 import styled from "styled-components";
+import SEO from "../components/seo";
 
 
 const APropos = () => {
-    useEffect(() => window.scrollTo(0, 0), [])
     return (
         <Container>
             <Header/>

@@ -32,20 +32,20 @@ const Footer = (props) => {
                 </BoxTextContentFooter>
                 <Nav>
                     <StyledLink to={"/"}>
-                        <LinkText size={0.7} sizeMd={0.4} color={'white'}
+                        <LinkText size={0.7} fontWeight={400} sizeMd={0.4} color={'white'}
                         >Accueil</LinkText>
                     </StyledLink>
-                    <StyledLink to={"/mission"}>
-                        <LinkText size={0.7} sizeMd={0.4} color={'white'}
+                    <StyledLink to={"/a-propos"}>
+                        <LinkText size={0.7} fontWeight={400} sizeMd={0.4} color={'white'}
                         >A propos</LinkText>
                     </StyledLink>
-                    <StyledLink to={"/mission"}>
-                        <LinkText size={0.7} sizeMd={0.4} color={'white'}
-                        >A propos</LinkText>
+                    <StyledLink to={"/partenaires"}>
+                        <LinkText size={0.7} fontWeight={400} sizeMd={0.4} color={'white'}
+                        >Partenaires</LinkText>
                     </StyledLink>
-                    <StyledLink to={"/mission"}>
-                        <LinkText size={0.7} sizeMd={0.4} color={'white'}
-                        >A propos</LinkText>
+                    <StyledLink to={"/contact"}>
+                        <LinkText size={0.7} fontWeight={400} sizeMd={0.4} color={'white'}
+                        >Contact</LinkText>
                     </StyledLink>
                 </Nav>
             </FooterWrapper>
@@ -69,7 +69,8 @@ const FooterWrapper = styled.div`
    @media (min-width: ${breakPoints.md}){
       flex-direction: row;
       margin: 0 auto;
-      min-width: 1000px;
+      max-width: 1000px;
+      width: 90%;
    }
 `
 
@@ -85,7 +86,6 @@ const Nav = styled.div`
   @media (min-width: ${breakPoints.md}){
       margin-top: 38px;
       flex-direction: row;
-      min-width: 500px;
   }
 `
 

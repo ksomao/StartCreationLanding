@@ -1,10 +1,11 @@
 import Text from "./Text";
 import ButtonV2 from "./ButtonV2";
 import React from "react";
+import styled from "styled-components";
 
 
-function CarouselItem({item}) {
-    return <div
+const CarouselItem = ({item}) =>  {
+    return <Container
         className={"carousel-item"}
     >
         <Text
@@ -22,5 +23,11 @@ function CarouselItem({item}) {
             lineHeight={"170%"}
             className={"carousel-item-description"}>{item.desc}</Text>
         <ButtonV2 value={"en savoir plus"}/>
-    </div>;
+    </Container>;
 }
+
+const Container = styled.div`
+  padding: 0 20px;
+`
+
+export default CarouselItem

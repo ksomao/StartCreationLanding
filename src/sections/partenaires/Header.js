@@ -9,8 +9,7 @@ import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {containerAnim, fadeIn, scale} from "../../animation";
 import {useEffect} from "react";
-
-
+import Menu from "../common/Menu";
 
 
 const Header = (props) => {
@@ -42,6 +41,9 @@ const Header = (props) => {
                     alt={'circle logo'}/>
             </ImgWrapper>
             <Wrapper>
+                <MenuWrapper>
+                    <Menu/>
+                </MenuWrapper>
                 <Title
                     stacked
                     color={props.theme.orange}
@@ -54,7 +56,7 @@ const Header = (props) => {
                     className={'mission-main-title'}
                 >
                     <span>Nos</span>
-                    <span>Partenaires</span>
+                    <span>Partenaireees</span>
                 </Title>
             </Wrapper>
         </Container>
@@ -66,6 +68,12 @@ export default withTheme(Header)
 const Container = styled(motion.div)`
   position: relative;
 `
+const MenuWrapper = styled.div`
+  position:absolute;
+  top: 0;
+  left: 0;
+`
+
 const Wrapper = styled.div`
   padding-left: 20px;
   width: 1000px;

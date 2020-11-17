@@ -8,6 +8,7 @@ import circleLogo from "../../images/circleLogo.svg";
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {containerAnim, fadeIn, scale} from "../../animation";
+import Menu from "../common/Menu";
 
 
 
@@ -34,6 +35,7 @@ const Header = (props) => {
             <Bg
                 variants={scale}
             />
+            <Menu/>
             <ImgWrapper
                 variants={fadeIn}>
                 <Img
