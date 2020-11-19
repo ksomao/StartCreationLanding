@@ -40,6 +40,7 @@ const OurServices = (props) => {
                         variants={fadeInUp}
                     >
                         <Title
+                            size={0.7}
                             color={props.theme.blue}
                             fontWeight={800}
                             marginBottom={8}
@@ -50,30 +51,31 @@ const OurServices = (props) => {
                             color={props.theme.blue}
                         >
                             <ul>
-                                <li>- Vous êtes accueillis et écoutés par des conseillers spécialisés</li>
-                                <li>- Vous rencontrez des entrepreneurs débutants ou confirmés</li>
+                                <li>- Vous êtes <Bold>accueillis et écoutés</Bold> par des conseillers spécialisés</li>
+                                <li>- Vous rencontrez des entrepreneurs <Bold>débutants</Bold> ou <Bold>confirmés</Bold></li>
                                 <li>- Vous Challengez votre idée et la transformez en projet réaliste !</li>
                             </ul>
                             A toutes les étapes du développement de votre projet:
                             Nous encourageons votre potentiel comme votre créativité
-                            Nous questionnons ensemble votre modèle d’affaire
+                            Nous questionons ensemble votre modèle d’affaire
                             Nous vous guidons vers l’expertise dont vous avez besoin
                             <br/>
-                            Plus de 30 personnes nous contactent chaque mois.
+                            Plus de <Bold>30 personnes</Bold> nous contactent chaque mois.
                             Osez l’aventure entrepreneuriale avec nous !
                         </Text>
                         <Title
                             color={props.theme.blue}
+                            size={0.7}
                             fontWeight={800}
                             marginTop={16}
                             marginBottom={8}
                         >
-                            Au sein de notre service
+                            Pour Qui ?
                         </Title>
                         <Text
                             color={props.theme.blue}
                         >
-                            Toute personne quel que soit son statut (Chômeur.se, salarié.e, indépendant.e..) ou toute
+                            <Bold>Toute personne</Bold> quel que soit son statut (Chômeur.se, salarié.e, indépendant.e..) ou toute
                             association/ structure bruxelloise.
                         </Text>
                     </Wrapper>
@@ -134,4 +136,8 @@ const Image = styled(motion.img)`
    width: 100%;
    margin-top: 24px;
    object-fit: cover;
+`
+
+const Bold = styled.span`
+  font-weight: 600;
 `

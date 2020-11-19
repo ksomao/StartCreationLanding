@@ -48,22 +48,22 @@ const OurMission = (props) => {
                         color={props.theme.blue}
                         maxWidthSm={'500px'}
                     >
-                        Start Création and Co accompagne des personnes ayant le souhait de développer un projet
-                        d’entreprise. L’Accompagnement se présente sous diverses formes : Information, conseil,
-                        mentorat, mise en réseau, coaching.
+                        <Bold>Start Création and Co</Bold> accompagne des personnes ayant le souhait de développer un projet
+                        d’entreprise. L’Accompagnement se présente sous diverses formes : <Bold>information, conseil,
+                        mentorat, mise en réseau, coaching.</Bold><br/><br/>
 
                         Notre spécialité est d’outiller les personnes afin qu’elles réfléchissent et modélisent un
-                        projet à valeur sociale et/ ou économique.
+                        projet à valeur sociale et/ ou économique.<br/><br/>
 
-                        Quel que soit l’état d’avancement de l’idée ou du projet chaque créateur peut nous consulter.
+                        Quel que soit <Bold>l’état d’avancement de l’idée ou du projet</Bold> chaque créateur peut nous consulter.
                         Nous travaillons en complémentarité avec différentes structures locales ou régionales d’aide à
                         la création d’entreprise, des personnes ressources et experts. Ceux-ci sont identifiés si
-                        nécessaire pour continuer à soutenir le porteur de projet afin qu’il bénéficie d’un apport
-                        spécifique pour le développement de son activité.
+                        nécessaire pour continuer à <Bold>soutenir le porteur de projet</Bold> afin qu’il bénéficie d’un apport
+                        spécifique pour le développement de son activité.<br/><br/>
 
                         Chez Start création and Co,
-                        l’accompagnement se déroule sous forme de rencontres individuelles avec un.e coach/conseille.re
-                        L’accompagnement est fixé généralement à 6 mois à raison d’1H30 par mois.
+                        l’accompagnement se déroule sous forme de rencontres individuelles avec <Bold>un.e coach/conseille.re</Bold>
+                        L’accompagnement est fixé généralement à <Bold>6 mois</Bold> à raison d’1H30 par mois.
                     </Text>
                 </Description>
             </ContentWrapper>
@@ -109,4 +109,8 @@ const Image = styled(motion.img)`
    width: 100%;
    margin-top: 24px;
    object-fit: cover;
+`
+
+const Bold = styled.span`
+  font-weight: 600;
 `

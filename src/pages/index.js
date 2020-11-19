@@ -5,9 +5,6 @@ import About from "../sections/home/About";
 import Space from "../sections/home/Space";
 import Events from "../sections/home/Events";
 import Partners from "../sections/home/Partners";
-import {Links} from "../app-config";
-import Word from "../sections/mission/Word";
-import Menu from "../sections/common/Menu";
 import SEO from "../components/seo";
 
 

@@ -1,23 +1,23 @@
 import {Link} from "gatsby";
 import arrowIcon from "../images/cirlcleWhite.svg";
 import React from "react";
-import styled from "styled-components";
+import styled, {withTheme} from "styled-components";
 import Text from "./Text";
 
 
-const ButtonSlider = ({value}) => {
+const ButtonSlider = (props) => {
 
     return (
         <StyledLink className={'cta'} to={""}>
             <Text
                 size={0.6}
-                color={props => props.theme.orange}
-                className={'cta-text'}>{value}</Text>
+                color={props.theme.orange}
+                className={'cta-text'}>{props.value}</Text>
             <img className={'cta-icon'} src={arrowIcon} alt=""/>
         </StyledLink>
     )
 }
-export default ButtonSlider
+export default withTheme(ButtonSlider)
 
 const StyledLink = styled(Link)`
         display: flex;

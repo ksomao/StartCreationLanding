@@ -4,13 +4,13 @@ import History from "../sections/mission/History";
 import Values from "../sections/mission/Values";
 import OurMission from "../sections/mission/OurMission";
 import OurServices from "../sections/mission/OurServices";
-import {Links} from "../app-config";
 import Word from "../sections/mission/Word";
 import styled, {withTheme} from "styled-components";
 import SEO from "../components/seo";
 
 
 const APropos = () => {
+
     return (
         <Container>
             <Header/>

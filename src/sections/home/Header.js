@@ -7,11 +7,12 @@ import Text, {
     default as Title,
 } from "../../components/Text";
 import {breakPoints} from "../../app-config";
-import {motion, useAnimation} from "framer-motion";
-import {useInView} from "react-intersection-observer";
-import {containerAnim,fadeInUp } from "../../animation";
+import {AnimatePresence, motion, useAnimation} from "framer-motion";
 import ButtonLink from "../../components/ButtonLink";
 import Menu from "../common/Menu";
+import {containerAnim, fadeInUp, fadeInUpScale} from "../../animation";
+import {useInView} from "react-intersection-observer";
+
 
 const Header = (props) => {
     const animation = useAnimation();
@@ -81,7 +82,7 @@ const Header = (props) => {
                     <HeroFigure
                         className={'hero-right-figure'}>
                         <HeroImage
-                            variants={fadeInUp}
+                            variants={fadeInUpScale}
                             className={'hero-right-image'}
                             src={heroImg}
                             srcset={heroImgMin + " 415w"}
@@ -198,7 +199,7 @@ const Testimonial = styled(motion.div)`
   }
 `
 
-const ButtonWrapper= styled(motion.div)`
+const ButtonWrapper = styled(motion.div)`
 `
 
 export default withTheme(Header)

@@ -53,3 +53,14 @@ export const GET_HOMEPAGE = gql`
         }
     }
 `;
+
+
+export const GET_EVENTS = gql`
+    query MyQuery {
+        allEvent{
+            title
+            startDate
+            excerpt
+        }
+    }
+`;

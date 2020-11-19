@@ -3,6 +3,7 @@ import Layout from './src/components/layout'
 import {ThemeProvider} from "styled-components";
 import {apolloClient, Links, theme} from "./src/app-config";
 import {globalHistory} from "@reach/router";
+import {ApolloProvider} from "@apollo/client";
 
 export const onInitialClientRender = () => {
     /**
@@ -13,16 +14,22 @@ export const onInitialClientRender = () => {
     globalHistory._onTransitionComplete();
 }
 
+
+
 const wrapPageElement = ({ element, props }) => (
     <Layout {...props}>
             {element}
     </Layout>
 )
 
+//OLD WRAPPER
 const wrapRootElement = ({ element }) => (
+    <ApolloProvider client={apolloClient}>
         <ThemeProvider theme={theme}>
             {element}
         </ThemeProvider>
+    </ApolloProvider>
 )
+
 
 export { wrapPageElement, wrapRootElement }

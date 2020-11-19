@@ -52,6 +52,16 @@ ${({noLink}) => noLink && css`
     };
 `};
 
+${({maxLines}) => maxLines && css`
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: ${maxLines};
+   -webkit-box-orient: vertical;
+`};
+
+
+
 ${({linkHoverColor}) => linkHoverColor && css`
     & > a:hover { 
       color: ${props => props.theme.orange};

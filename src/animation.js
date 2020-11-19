@@ -104,7 +104,7 @@ export const subContainerAnimation = {
 
 export const imageScale = {
     initial: {
-        x: "100%",
+        x: "-100%",
         opacity: 1,
     },
     animate: {

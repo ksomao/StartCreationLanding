@@ -5,9 +5,21 @@ import Text from "../../components/Text";
 import {breakPoints} from "../../app-config";
 import aboutBg from "../../images/events-decoration.png";
 import {motion} from "framer-motion";
-import data from "../../data/events.json"
+import {useQuery} from "@apollo/client";
+import {GET_EVENTS} from "../../queries";
+
 
 const Events = (props) => {
+    const { loading, error, data } = useQuery(GET_EVENTS);
+    let [events,setEvents] = useState([])
+
+    useEffect(() => {
+        if(loading === false && data){
+            setEvents(data)
+        }
+    }, [loading, data])
+
+    console.log(events);
     return (
         <Container>
             <EventTitleWrapper
@@ -36,7 +48,7 @@ const Events = (props) => {
                             className="events-decoration-bg"/>
                     </ImageWrapper>
                     <CarouselWrapper className="carousel-wrapper">
-                        <Carousel data={Object.entries(data)[0][1]}/>
+                        <Carousel data={events}/>
                     </CarouselWrapper>
                 </ContentWrapper>
             </SubContainer>

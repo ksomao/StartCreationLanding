@@ -3,7 +3,6 @@ import styled, {withTheme} from "styled-components";
 import circleLogo from "../../images/circleLogo.svg"
 import circleBg from "../../images/circlebg.png"
 import {motion, useAnimation} from "framer-motion";
-import {useInView} from "react-intersection-observer";
 import {containerAnim, fadeInUp} from "../../animation";
 import Text, {default as Title} from "../../components/Text";
 import {breakPoints} from "../../app-config";

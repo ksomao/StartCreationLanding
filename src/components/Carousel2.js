@@ -29,21 +29,32 @@ const responsive = {
 
 
 const EventsCarousel = ({data}) => {
+    const events = data?.allEvent
+
     return (
-        <Container>
-            <Carousel
+        <Container data={data}>
+            {events === false && <Text
+                size={2}
+                marginLeft={32}
+                marginBottom={32}
+                color={'white'}
+                fontWeight={700}
+            >
+                Pas d'évenements disponible
+            </Text>}
+            {events && <Carousel
                 swipeable={false}
                 draggable={false}
                 showDots={false}
                 responsive={responsive}>
-                {data.map((item, index) => (
+                {events.map((item, index) => (
                     <CarouselItem
                         item={item}
                         className={'carousel-item'}
                         key={item.title + index}>
                     </CarouselItem>
                 ))}
-            </Carousel>
+            </Carousel>}
         </Container>
     )
 }
