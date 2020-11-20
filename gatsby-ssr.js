@@ -1,28 +1,35 @@
 import React from 'react'
-import {ApolloClient, ApolloProvider, HttpLink, InMemoryCache,} from '@apollo/client'
-import fetch from 'isomorphic-fetch'
 import Layout from './src/components/layout'
 import {ThemeProvider} from "styled-components";
+import {apolloClient, Links, theme} from "./src/app-config";
 import {globalHistory} from "@reach/router";
-import {theme} from "./src/app-config";
+import {ApolloProvider} from "@apollo/client";
 
-
-
-
-export const onInitialClientRenderr = () => {
-    window.addEventListener('popstate', () =>
-        window.location.href = window.location.href
-    )
+export const onInitialClientRender = () => {
+    /**
+     * This is a workaround for a bug in Gatsby
+     *
+     * See https://github.com/gatsbyjs/gatsby/issues/8357 for more details
+     */
+    globalHistory._onTransitionComplete();
 }
 
+
+
 const wrapPageElement = ({ element, props }) => (
-    <Layout {...props}>{element}</Layout>
+    <Layout {...props}>
+        {element}
+    </Layout>
 )
 
+//OLD WRAPPER
 const wrapRootElement = ({ element }) => (
+    <ApolloProvider client={apolloClient}>
         <ThemeProvider theme={theme}>
             {element}
         </ThemeProvider>
+    </ApolloProvider>
 )
+
 
 export { wrapPageElement, wrapRootElement }
