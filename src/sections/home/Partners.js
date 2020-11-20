@@ -103,11 +103,18 @@ const PartnersContent = styled(motion.h2)`
 
 `
 const PartnersLogoWrapper = styled.div`
- max-width: 600px;
- margin-left: -80px;
+ max-width: 400px;
+ margin: 50px auto;
+ @media (min-width: ${breakPoints.md}){
+    margin-left: 20px;
+    max-width: 600px;
+  }
 `
 const PartnerLogos = styled.img`
  width: 100%;
+ @media (min-width: ${breakPoints.md}){
+     width: 100%;
+  }
 `
 
 const Bold = styled.span`

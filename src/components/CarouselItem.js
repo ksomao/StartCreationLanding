@@ -2,9 +2,11 @@ import Text from "./Text";
 import ButtonV2 from "./ButtonV2";
 import React from "react";
 import styled from "styled-components";
+import parse from "html-react-parser"
 
 
 const CarouselItem = ({item}) =>  {
+    console.log(item);
     return <Container
         className={"carousel-item"}
     >
@@ -16,13 +18,14 @@ const CarouselItem = ({item}) =>  {
             marginBottom={24}
             className={"carousel-item-title"}>{item.title}</Text>
         <Text
+            maxLines={10}
             color={"white"}
             font-weight={200}
             size={0.6}
             opacity={"80%"}
             lineHeight={"170%"}
-            className={"carousel-item-description"}>{item.desc}</Text>
-        <ButtonV2 value={"en savoir plus"}/>
+            className={"carousel-item-description"}>{parse(item.description.html)}</Text>
+        <ButtonV2 value={"en savoir plus"} url={item.url}/>
     </Container>;
 }
 

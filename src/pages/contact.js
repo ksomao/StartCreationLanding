@@ -13,6 +13,8 @@ const Contact = () => {
     )
 }
 
-const Container = styled(motion.div)``
+const Container = styled(motion.div)`
+overflow: hidden;
+`
 
 export default withTheme(Contact)

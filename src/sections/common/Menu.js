@@ -48,9 +48,12 @@ export default withTheme(Menu)
 const Container = styled(motion.div)`
   position: relative;
   z-index: 5;
-  width: 400px;
   padding-top: 24px;
   padding-bottom: 32px;
+  width: 100vw;
+   @media  (min-width:  ${breakPoints.sm}) {
+      width: 400px;
+  }
 `
 
 const ContentWrapper = styled(motion.div)`
@@ -67,6 +70,9 @@ const LinkWrapper = styled(motion.div)`
   align-self: center;
   justify-self: flex-start;
   min-width: 400px;
+  @media  (max-width:  ${breakPoints.sm}) {
+    display: none;
+  }
 `
 
 
@@ -91,3 +97,4 @@ margin-left: 16px;
   }
 `
 const HomeLink = styled(Link)``
+

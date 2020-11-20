@@ -82,7 +82,7 @@ const Header = (props) => {
                     <HeroFigure
                         className={'hero-right-figure'}>
                         <HeroImage
-                            variants={fadeInUpScale}
+                            variants={fadeInUp}
                             className={'hero-right-image'}
                             src={heroImg}
                             srcset={heroImgMin + " 415w"}

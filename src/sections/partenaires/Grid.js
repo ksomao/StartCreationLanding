@@ -35,8 +35,8 @@ const Grid = (props) => {
             variants={containerAnim}
         >
             <Wrapper>
-                {_.map(partners, partner => (
-                    <PartnerItem variants={fadeInUp}>
+                {_.map(partners, (partner,index) => (
+                    <PartnerItem variants={fadeInUp} key={partner.text}>
                         <WrapperImage>
                             <Image size={partner.size} src={require("../..//images/logos/" + partner.image + ".png")}
                                    alt=""/>
@@ -62,6 +62,7 @@ const Grid = (props) => {
 export default withTheme(Grid)
 
 const Container = styled(motion.div)`
+  overflow: hidden;
   padding: 20px 0 100px;
   @media (min-width: ${breakPoints.lg}){
     min-height: 50vh; 

@@ -6,6 +6,7 @@ import Space from "../sections/home/Space";
 import Events from "../sections/home/Events";
 import Partners from "../sections/home/Partners";
 import SEO from "../components/seo";
+import MenuMobile from "../sections/common/MenuMobile";
 
 
 const IndexPage = () => {

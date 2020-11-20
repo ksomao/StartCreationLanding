@@ -91,10 +91,11 @@ const Grid = (props) => {
 export default withTheme(Grid)
 
 const Container = styled(motion.div)`
-    min-height: calc(100vh - 200px);
+    min-height: 100vh;
     display: flex;
   @media (min-width: ${breakPoints.md}){
     height: 100%;
+    min-height: calc(100vh - 200px);
   }
 `
 
