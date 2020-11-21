@@ -1,14 +1,31 @@
 import React, {useEffect, useState} from "react"
 import styled, {withTheme} from "styled-components";
-import MissionTitle from "../../components/MissionTitle";
 import wordBg from "../../images/wordDecoration.png"
 import {breakPoints} from "../../app-config";
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {containerAnim, fadeInUp, fadeInX} from "../../animation";
-import ReactCarousel from "react-elastic-carousel";
 import Text from "../../components/Text";
+import Carousel from "react-multi-carousel";
 
+const responsive = {
+    superLargeDesktop: {
+        breakpoint: {max: 4000, min: 1280},
+        items: 1
+    },
+    desktop: {
+        breakpoint: {max: 1280, min: 1024},
+        items: 1
+    },
+    tablet: {
+        breakpoint: {max: 1024, min: 640},
+        items: 1
+    },
+    mobile: {
+        breakpoint: {max: 640, min: 0},
+        items: 1
+    }
+};
 
 const Word = (props) => {
     const animation = useAnimation();
@@ -44,7 +61,10 @@ const Word = (props) => {
             variants={containerAnim}
         >
             <Bg src={wordBg}/>
-            <ReactCarousel itemsToShow={1}>
+            <Carousel
+                swipeable={false}
+                draggable={false}
+                responsive={responsive}>
                 {
                     data.map((item,index) => (
                         <CarouselItem>
@@ -85,7 +105,7 @@ const Word = (props) => {
                         </CarouselItem>
                     ))
                 }
-            </ReactCarousel>
+            </Carousel>
         </Container>
     )
 }
@@ -96,23 +116,11 @@ const Container = styled(motion.div)`
 position: relative;
 margin-top: 200px;
 margin-bottom: 100px;
-overflow: hidden;
-  .rec-arrow{
-    display: none;
-    background: white;
-    font-size: 20px;
-      &:disabled {
-        visibility: hidden;
-      }
-    }
-   .rec-dot{
-      background: ${props => props.theme.blue};
-      height: 10px;
-      width: 10px;
-      opacity: 0.5;
-   }    
+overflow: hidden;  
 `
+
 const CarouselItem = styled(motion.div)`
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: 40px;
@@ -125,11 +133,13 @@ const CarouselItem = styled(motion.div)`
           grid-template-columns: 1fr 1fr;
     }
 `
+
 const TitleWrapper = styled(motion.div)`
   @media (min-width:  ${breakPoints.lg}){
     padding-left: 50px;
   }
 `
+
 const TextWrapper = styled(motion.div)`
   width: 100%;
   padding: 0 10px;

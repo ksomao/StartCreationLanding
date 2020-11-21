@@ -1,9 +1,6 @@
 import React, {useEffect, useState} from "react"
 import styled, {css} from "styled-components";
-import ButtonV2 from "./ButtonV2";
 import Text from "./Text";
-import {motion, useAnimation} from "framer-motion";
-import {useInView} from "react-intersection-observer";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import CarouselItem from "./CarouselItem";
@@ -30,7 +27,6 @@ const responsive = {
 
 const EventsCarousel = ({events}) => {
 
-    console.log(events);
     return (
         <Container data={events}>
             {events === false && <Text

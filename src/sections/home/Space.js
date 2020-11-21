@@ -13,7 +13,8 @@ function SpaceServiceItem(props) {
     return (
         <ServiceListItem className={"space-service-item"}>
             <Text
-                size={0.6}
+                size={0.8}
+                sizeMd={0.6}
                 fontWeight={800}
                 color={'#F78240'}
                 className={"space-service-item-plus"}>+</Text>
@@ -22,7 +23,8 @@ function SpaceServiceItem(props) {
                 font-weight={600}
                 color={'#010253'}
                 textTransform={'capitalize'}
-                size={0.6}
+                size={0.8}
+                sizeMd={0.6}
                 fontWeight={600}
                 className={"space-service-item-text"}>{props.service}</Text>
         </ServiceListItem>

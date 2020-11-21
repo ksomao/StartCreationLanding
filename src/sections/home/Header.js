@@ -43,7 +43,7 @@ const Header = (props) => {
                                 variants={fadeInUp}
                                 stacked
                                 color={props.theme.orange}
-                                size={2.6}
+                                size={3.2}
                                 sizeMd={7}
                                 sizeLg={7}
                                 sizeXl={9}
@@ -188,7 +188,7 @@ const Testimonial = styled(motion.div)`
   opacity: 0.98;
    @media (max-width:${breakPoints.lg}){
       bottom: -20px;
-      left: 0px;
+      left: 0;
   }
 
     @media (min-width:${breakPoints.lg}){

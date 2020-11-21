@@ -82,37 +82,20 @@ const Title = styled(motion.h2)`
   }
 `
 
-const ButtonWrapper = styled.div`
-  margin-left: 25px;
-  @media (min-width: ${breakPoints.md}){
-    margin-top: 15px;
-    margin-left: 50px;
-  }
-`
-
 const SubContainer = styled.div`
-    // position:relative;
-    // padding-top: 150px;
-    // background: ${props => props.theme.blue};
-    // padding-bottom: 100px;
-    // overflow: hidden;
-    .img-wrapper{
-         overflow: hidden;
-        width: 200px;
+   @media (max-width: ${breakPoints.sm}){
+     margin-top: 24px;
    }
-   
-  @media (min-width: ${breakPoints.md}){
-  }
-      
 
 `
+
 const ContentWrapper = styled.div`
-      position:relative;
-      z-index: 2;
-      height: 100%;
-      @media (min-width: ${breakPoints.md}){
-        padding-bottom: 100px;
-      }
+  position:relative;
+  z-index: 2;
+  height: 100%;
+  @media (min-width: ${breakPoints.md}){
+    padding-bottom: 100px;
+  }
 `
 
 const ImageWrapper = styled.figure`

@@ -21,10 +21,10 @@ const Header = (props) => {
                 <Text
                     color={props.theme.blue}
                 >
-                    La région bruxelloise se caractérise par la diversité
-                    culturelle et mixité sociale de ses habitants. Des communautés issues de toutes les parties du monde
+                    <Bold>La région bruxelloise se caractérise par la diversité
+                    culturelle et mixité sociale de ses habitants.</Bold>  Des communautés issues de toutes les parties du monde
                     y vivent et y travaillent.
-                    <br/>Cette diversité constitue une richesse potentielle pour le développement de la région. Pourtant
+                    <br/>Cette diversité <Bold>constitue une richesse potentielle pour le développement de la région.</Bold> Pourtant
                     certains groupes connaissent de nombreuses discriminations sur le marché de l’emploi qui freinent
                     leur dynamisme.
                     Particulièrement pour les jeunes, les femmes seules et les migrants.
@@ -36,8 +36,8 @@ const Header = (props) => {
                     secteur porteur de la création de petites et moyennes entreprises. Or face aux défis sociétaux
                     actuels, il semble impératif d’offrir des outils pour permettre à tous de se sentir légitime
                     d’innover et de créer.
-                    L’ambition de Start Création est de rendre plus accessible les rouages du processus de la création
-                    d’entreprise à ces publics.
+                    L’ambition de Start Création est de <Bold>rendre plus accessible les rouages du processus de la création
+                    d’entreprise</Bold> à ces publics.
                 </Text>
             </Story>
         </Container>
@@ -69,3 +69,6 @@ const TitleWrapper = styled.div`
    }
 `
 
+const Bold = styled.span`
+  font-weight: 600;
+`

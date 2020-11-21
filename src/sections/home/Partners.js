@@ -15,7 +15,7 @@ const Partners = (props) => {
                 <Text
                     stacked
                     color={props.theme.orange}
-                    size={2.5}
+                    size={2.2}
                     sizeLg={5}
                     mawLg={"50px"}
                     lineHeight={'110%'}

@@ -17,7 +17,7 @@ const Layout = (props) => {
         <>
             <Container>
                 <MenuWrapper displayMenu={displayMenu}>
-                    <MenuMobile toggleMenu={toggleMenu}/>
+                    <MenuMobile toggleMenu={toggleMenu} />
                 </MenuWrapper>
                 <MenuLink
                     onClick={() => toggleMenu()}

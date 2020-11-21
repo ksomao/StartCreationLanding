@@ -35,7 +35,7 @@ const Header = (props) => {
                     stacked
                     color={props.theme.orange}
                     fontWeight={800}
-                    size={3.5}
+                    size={2.6}
                     sizeMd={6}
                     lineHeight={1}
                     textTransform={'capitalize'}
