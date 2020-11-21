@@ -8,7 +8,6 @@ export const mixinFontScalableSize= (size) => {
 export const useMenuState = (initialValue) => {
     const [state, setState] = useState(initialValue);
 
-    console.log("test");
     const stateRef = useRef(state);
     useEffect(
         () => {

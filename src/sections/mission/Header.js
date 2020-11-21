@@ -1,12 +1,11 @@
-import React, {useEffect} from "react"
+import React from "react"
 import styled, {withTheme} from "styled-components";
 import Text, {
     default as Title,
 } from "../../components/Text";
 import {breakPoints} from "../../app-config";
 import circleLogo from "../../images/circleLogo.svg";
-import {motion, useAnimation} from "framer-motion";
-import {useInView} from "react-intersection-observer";
+import {motion} from "framer-motion";
 import {containerAnim, fadeIn, scale} from "../../animation";
 import Menu from "../common/Menu";
 

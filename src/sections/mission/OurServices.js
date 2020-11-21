@@ -95,11 +95,12 @@ const Container = styled(motion.div)`
 `
 
 const ContentWrapper = styled(motion.div)`
-   padding-top: 100px;
+    padding-top: 75px;
    max-width: 1400px;
    margin: 0 auto;
    display: grid;
    @media (min-width: ${breakPoints.md}){
+    padding-top: 100px;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 40px;
    }

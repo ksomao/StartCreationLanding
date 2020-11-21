@@ -3,11 +3,10 @@ import styled, {withTheme} from "styled-components";
 import MissionTitle from "../../components/MissionTitle";
 import MissionImage from "../../images/OurMission.png"
 import {breakPoints} from "../../app-config";
-import Text, {default as Title}
-    from "../../components/Text";
+import Text from "../../components/Text";
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
-import {containerAnim, containerMissionAnim, fadeIn, fadeInUp, imageScale} from "../../animation";
+import {containerAnim, fadeInUp, imageScale} from "../../animation";
 
 
 const OurMission = (props) => {
@@ -34,7 +33,7 @@ const OurMission = (props) => {
                 <ImageWrapper>
                     <Image
                         variants={imageScale}
-                           src={MissionImage}/>
+                        src={MissionImage}/>
                 </ImageWrapper>
                 <Description>
                     <MissionTitleWrapper variants={fadeInUp}>
@@ -48,21 +47,25 @@ const OurMission = (props) => {
                         color={props.theme.blue}
                         maxWidthSm={'500px'}
                     >
-                        <Bold>Start Création and Co</Bold> accompagne des personnes ayant le souhait de développer un projet
+                        <Bold>Start Création and Co</Bold> accompagne des personnes ayant le souhait de développer un
+                        projet
                         d’entreprise. L’Accompagnement se présente sous diverses formes : <Bold>information, conseil,
                         mentorat, mise en réseau, coaching.</Bold><br/><br/>
 
                         Notre spécialité est d’outiller les personnes afin qu’elles réfléchissent et modélisent un
                         projet à valeur sociale et/ ou économique.<br/><br/>
 
-                        Quel que soit <Bold>l’état d’avancement de l’idée ou du projet</Bold> chaque créateur peut nous consulter.
+                        Quel que soit <Bold>l’état d’avancement de l’idée ou du projet</Bold> chaque créateur peut nous
+                        consulter.
                         Nous travaillons en complémentarité avec différentes structures locales ou régionales d’aide à
                         la création d’entreprise, des personnes ressources et experts. Ceux-ci sont identifiés si
-                        nécessaire pour continuer à <Bold>soutenir le porteur de projet</Bold> afin qu’il bénéficie d’un apport
+                        nécessaire pour continuer à <Bold>soutenir le porteur de projet</Bold> afin qu’il bénéficie d’un
+                        apport
                         spécifique pour le développement de son activité.<br/><br/>
 
                         Chez Start création and Co,
-                        l’accompagnement se déroule sous forme de rencontres individuelles avec <Bold>un.e coach/conseille.re</Bold>
+                        l’accompagnement se déroule sous forme de rencontres individuelles avec <Bold>un.e
+                        coach/conseille.re</Bold>
                         L’accompagnement est fixé généralement à <Bold>6 mois</Bold> à raison d’1H30 par mois.
                     </Text>
                 </Description>
@@ -78,11 +81,11 @@ const Container = styled.div`
 `
 
 const ContentWrapper = styled(motion.div)`
-   padding-top: 150px;
    max-width: 1400px;
    margin: 0 auto;
    display: grid;
    @media (min-width: ${breakPoints.md}){
+    padding-top: 150px;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 40px;
    }

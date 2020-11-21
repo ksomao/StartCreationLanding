@@ -23,19 +23,21 @@ const Grid = (props) => {
             <Wrapper>
                 <Left>
                     <LeftTextWrapper>
-                        <Title
-                            variants={fadeInUp}
-                            stacked
-                            color={props.theme.orange}
-                            fontWeight={800}
-                            size={3}
-                            zIndex={5}
-                            sizeMd={3.5}
-                            lineHeight={0.9}
-                            textTransform={'capitalize'}>
-                            <span>Nous</span>
-                            <span>Contacter</span>
-                        </Title>
+                        <TitleWrapper>
+                            <Title
+                                variants={fadeInUp}
+                                stacked
+                                color={props.theme.orange}
+                                fontWeight={800}
+                                size={2.5}
+                                zIndex={5}
+                                sizeMd={3.5}
+                                lineHeight={0.9}
+                                textTransform={'capitalize'}>
+                                <span>Nous</span>
+                                <span>Contacter</span>
+                            </Title>
+                        </TitleWrapper>
                         <Text
                             variants={fadeInUp}
                             marginTop={32}
@@ -101,6 +103,9 @@ const Container = styled(motion.div)`
 
 const MenuWrapper = styled(motion.div)`
   position: absolute;
+`
+const TitleWrapper = styled(motion.div)`
+  margin-top: 32px;
 `
 
 const CircleLogo = styled(motion.img)`

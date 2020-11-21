@@ -1,9 +1,6 @@
 import React from "react"
 import styled, {withTheme} from "styled-components";
-import Text, {
-    default as Title,
-    default as StoryText,
-} from "../../components/Text";
+import Text from "../../components/Text";
 import MissionTitle from "../../components/MissionTitle";
 import {breakPoints} from "../../app-config";
 
@@ -12,7 +9,7 @@ const Header = (props) => {
     return (
         <Container>
             <TitleWrapper>
-                <MissionTitle>
+                <MissionTitle leftAlign left={-20}>
                     <span className={'mission-title-item'}>Notre</span>
                     <span className={'mission-title-item'}>Histoire</span>
                 </MissionTitle>

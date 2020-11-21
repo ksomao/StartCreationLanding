@@ -14,7 +14,8 @@ const Header = (props) => {
             <Title
                 stacked
                 color={props.theme.blue}
-                size={3}
+                size={2.5}
+                sizeSm={3}
                 fontWeight={800}
                 zIndex={2}
                 lineHeight={1.1}

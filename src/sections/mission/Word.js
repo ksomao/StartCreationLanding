@@ -67,7 +67,7 @@ const Word = (props) => {
                 responsive={responsive}>
                 {
                     data.map((item,index) => (
-                        <CarouselItem>
+                        <CarouselItem key={item.name}>
                             <TitleWrapper>
                                 <Text
                                     variants={fadeInUp}
@@ -113,10 +113,14 @@ const Word = (props) => {
 export default withTheme(Word)
 
 const Container = styled(motion.div)`
+padding: 20px;
 position: relative;
-margin-top: 200px;
+margin-top: 100px;
 margin-bottom: 100px;
-overflow: hidden;  
+overflow: hidden;
+    @media (min-width:  ${breakPoints.md}){
+          margin-top: 200px;
+    }
 `
 
 const CarouselItem = styled(motion.div)`

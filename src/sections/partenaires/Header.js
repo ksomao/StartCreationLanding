@@ -33,7 +33,7 @@ const Header = (props) => {
                         stacked
                         color={props.theme.orange}
                         fontWeight={800}
-                        size={3.5}
+                        size={2.5}
                         sizeMd={6}
                         lineHeight={1}
                         textTransform={'capitalize'}
@@ -69,7 +69,8 @@ const Wrapper = styled.div`
 `
 
 const TitleWrapper = styled.div`
-  padding-top: 90px;
+  padding-top: 120px;
+  padding-left: 20px;
   @media (min-width: ${breakPoints.md}){
     padding-top: 0;
   }
