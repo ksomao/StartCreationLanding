@@ -11,67 +11,67 @@ import {useMenuState} from "../../helpers";
 
 
 const MenuMobile = (props) => {
-    const animation = useAnimation();
-    const [stateRef, setState] = useMenuState(false);
+  const animation = useAnimation();
+  const [stateRef, setState] = useMenuState(false);
 
-    const [contentRef, inView] = useInView({
-        rootMargin: "0px",
-    })
+  const [contentRef, inView] = useInView({
+    rootMargin: "0px",
+  })
 
-    const toggleMenuInternal = () => {
-        props.toggleMenu()
+  const toggleMenuInternal = () => {
+    props.toggleMenu()
+  }
+
+  useEffect(() => {
+    if (inView) {
+      animation.start("animate")
     }
+  }, [animation, inView])
 
-    useEffect(() => {
-        if (inView) {
-            animation.start("animate")
-        }
-    }, [animation, inView])
-
-    return (
-        <Container>
-            <HomeLink to={"/"}>
-                <Logo src={ScLogo}/>
-            </HomeLink>
-            <ContentWrapper
-                ref={contentRef}
-                animate={animation}
-                initial='initial'
-                variants={containerAnim}
-            >
-                <LinkWrapper variants={fadeInUp2}>
-                    <LinkItemWrapper onClick={() => toggleMenuInternal()}>
-                        <StyledLink to={"/"}>
-                            <LinkText className={'menu-link'}
-                                      size={0.9} fontWeight={700} sizeMd={0.4} color={'white'} noLink
-                            >Accueil</LinkText>
-                        </StyledLink>
-                    </LinkItemWrapper>
-                    <LinkItemWrapper variants={fadeInUp2} onClick={() => toggleMenuInternal()}>
-                        <StyledLink to={"/a-propos"}>
-                            <LinkText className={'menu-link'}
-                                      size={0.9} fontWeight={700} sizeMd={0.4} color={'white'} noLink
-                            >À propos</LinkText>
-                        </StyledLink>
-                    </LinkItemWrapper>
-                    <LinkItemWrapper variants={fadeInUp2} onClick={() => toggleMenuInternal()}>
-                        <StyledLink to={"/partenaires"}>
-                            <LinkText className={'menu-link'}
-                                      size={0.9} fontWeight={700} sizeMd={0.4} color={'white'} noLink
-                            >Partenaires</LinkText>
-                        </StyledLink>
-                    </LinkItemWrapper>
-                    <LinkItemWrapper variants={fadeInUp2} onClick={() => toggleMenuInternal()}>
-                        <StyledLink to={"/contact"}>
-                            <LinkText className={'menu-link'}
-                                      size={0.9} fontWeight={700} sizeMd={0.4} color={'white'} noLink
-                            >Contact</LinkText>
-                        </StyledLink>
-                    </LinkItemWrapper>
-                </LinkWrapper>
-            </ContentWrapper>
-        </Container>
-    )
+  return (
+      <Container>
+        <HomeLink to={"/"}>
+          <Logo src={ScLogo}/>
+        </HomeLink>
+        <ContentWrapper
+            ref={contentRef}
+            animate={animation}
+            initial='initial'
+            variants={containerAnim}
+        >
+          <LinkWrapper variants={fadeInUp2}>
+            <LinkItemWrapper onClick={() => toggleMenuInternal()}>
+              <StyledLink to={"/"}>
+                <LinkText className={'menu-link'}
+                          size={0.9} fontWeight={700} sizeMd={0.4} color={'white'} noLink
+                >Accueil</LinkText>
+              </StyledLink>
+            </LinkItemWrapper>
+            <LinkItemWrapper variants={fadeInUp2} onClick={() => toggleMenuInternal()}>
+              <StyledLink to={"/a-propos"}>
+                <LinkText className={'menu-link'}
+                          size={0.9} fontWeight={700} sizeMd={0.4} color={'white'} noLink
+                >À propos</LinkText>
+              </StyledLink>
+            </LinkItemWrapper>
+            <LinkItemWrapper variants={fadeInUp2} onClick={() => toggleMenuInternal()}>
+              <StyledLink to={"/partenaires"}>
+                <LinkText className={'menu-link'}
+                          size={0.9} fontWeight={700} sizeMd={0.4} color={'white'} noLink
+                >Partenaires</LinkText>
+              </StyledLink>
+            </LinkItemWrapper>
+            <LinkItemWrapper variants={fadeInUp2} onClick={() => toggleMenuInternal()}>
+              <StyledLink to={"/contact"}>
+                <LinkText className={'menu-link'}
+                          size={0.9} fontWeight={700} sizeMd={0.4} color={'white'} noLink
+                >Contact</LinkText>
+              </StyledLink>
+            </LinkItemWrapper>
+          </LinkWrapper>
+        </ContentWrapper>
+      </Container>
+  )
 }
 
 export default withTheme(MenuMobile)

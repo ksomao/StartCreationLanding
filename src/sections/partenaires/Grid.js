@@ -39,7 +39,7 @@ const Grid = (props) => {
                     <PartnerItem variants={fadeInUp} key={partner.text}>
                         <WrapperImage>
                             <Image size={partner.size} src={require("../..//images/logos/" + partner.image + ".png")}
-                                   alt=""/>
+                                   alt= {partners.image + "logo"}/>
                         </WrapperImage>
                         <Text
                             marginTop={16}

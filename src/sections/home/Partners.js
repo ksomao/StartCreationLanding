@@ -10,12 +10,12 @@ import ButtonLink from "../../components/ButtonLink";
 const Partners = (props) => {
     return (
         <Container className={'partner'}>
-            <Bg  src={bgdeco} alt=""/>
+            <Bg  src={bgdeco} alt="background decoration partenaire"/>
             <Title className="partner-title-wrapper">
                 <Text
                     stacked
                     color={props.theme.orange}
-                    size={2.2}
+                    size={2.5}
                     sizeLg={5}
                     mawLg={"50px"}
                     lineHeight={'110%'}
@@ -43,7 +43,7 @@ const Partners = (props) => {
                     <ButtonLink className={'cta-partner'} value={'Voir tous nos partenaires.'} linkTo={'/partenaires'}/>
                 </div>
                <PartnersLogoWrapper className={'partner-logos-wrapper'} >
-                   <PartnerLogos className={'partner-logos'} src={partnerLogos} alt=""/>
+                   <PartnerLogos className={'partner-logos'} src={partnerLogos} alt="logo des partenaires"/>
                </PartnersLogoWrapper>
             </PartnersContent>
         </Container>

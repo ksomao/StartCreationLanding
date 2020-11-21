@@ -43,7 +43,7 @@ const Events = (props) => {
                     <ImageWrapper>
                         <motion.img
                             src={aboutBg}
-                            alt=""
+                            alt="event background image"
                             className="events-decoration-bg"/>
                     </ImageWrapper>
                     <CarouselWrapper className="carousel-wrapper">
@@ -82,36 +82,20 @@ const Title = styled(motion.h2)`
   }
 `
 
+const ImageWrapper = styled.div``
+
+const CarouselWrapper = styled.div``
+
 const SubContainer = styled.div`
-   @media (max-width: ${breakPoints.sm}){
-     margin-top: 24px;
+    .img-wrapper{
+         overflow: hidden;
+        width: 200px;
    }
-
-`
-
-const ContentWrapper = styled.div`
-  position:relative;
-  z-index: 2;
-  height: 100%;
   @media (min-width: ${breakPoints.md}){
-    padding-bottom: 100px;
   }
 `
-
-const ImageWrapper = styled.figure`
-  overflow: hidden;
-  width: 200px;
-  .events-decoration-bg{
-    position:absolute;  
-    z-index: -1;
-    width: 1500px;
-    top: -100px;
-    right: -200px;
-}
-`
-
-const CarouselWrapper = styled.div`
-  @media (min-width: ${breakPoints.sm}){
-    margin-top: 50px;
-  }
+const ContentWrapper = styled.div`
+      position:relative;
+      z-index: 2;
+      height: 100%;
 `

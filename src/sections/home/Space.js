@@ -81,7 +81,7 @@ const Space = (props) => {
             <div className="imgWrapper">
                 <motion.img
                     src={aboutBg}
-                    alt=""
+                    alt="space background decoration"
                     className="about-decoration-bg"/>
             </div>
             <div className="space-content">

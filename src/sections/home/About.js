@@ -35,7 +35,7 @@ const About = (props) => {
           <motion.img
               animation={fadeInUp}
               src={aboutBg}
-              alt=""
+              alt="decoration backgrond about"
               className="about-decoration-bg"/>
           <AboutContent className="about-content">
             <ImageFigure
