@@ -14,7 +14,7 @@ const Menu = (props) => {
         <Container>
             <ContentWrapper>
                 <HomeLink to={"/"}>
-                    <Logo src={ScLogo}/>
+                    <Logo src={ScLogo} alt='menu logo'/>
                 </HomeLink>
                 <LinkWrapper>
                     <StyledLink to={"/"}>
